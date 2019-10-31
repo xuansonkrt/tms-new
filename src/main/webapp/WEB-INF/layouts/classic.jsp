@@ -50,16 +50,28 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="${pageContext.request.contextPath}/assets/vendors/js/vendor.bundle.base.js"></script>
+    <script language="JavaScript" type="text/javascript"  src="${pageContext.request.contextPath}/assets/js/jquery-3.4.1.min.js" ></script>
+    <script language="JavaScript" type="text/javascript"  src="${pageContext.request.contextPath}/assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="${pageContext.request.contextPath}/assets/js/off-canvas.js"></script>
-    <script src="${pageContext.request.contextPath}/assets/js/hoverable-collapse.js"></script>
-    <script src="${pageContext.request.contextPath}/assets/js/misc.js"></script>
+    <script language="JavaScript" type="text/javascript"  src="${pageContext.request.contextPath}/assets/js/off-canvas.js"></script>
+    <script language="JavaScript" type="text/javascript"  src="${pageContext.request.contextPath}/assets/js/hoverable-collapse.js"></script>
+    <script  language="JavaScript" type="text/javascript" src="${pageContext.request.contextPath}/assets/js/misc.js"></script>
+    <script language="JavaScript" type="text/javascript" s src="${pageContext.request.contextPath}/assets/js/main.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
     <!-- End custom js for this page -->
+    
+    <script>
+	$(document).ready(function(){
+		$('#sonnx').on('click', function(){
+			var areaId="divArea";
+			var url ="/demo"
+			ajaxUpdate('get',areaId,url,null);
+		});
+	});
+</script>
   </body>
 </html>

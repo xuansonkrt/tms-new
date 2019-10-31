@@ -5,8 +5,7 @@
 <tiles-definitions>  
  
    <!-- Base Define -->
-   <definition name="base.definition" 
-       template="/WEB-INF/layouts/classic.jsp">  
+   <definition name="base.definition" template="/WEB-INF/layouts/classic.jsp">  
        <put-attribute name="title" value="" />  
        <put-attribute name="navbar" value="/WEB-INF/layouts/_navbar.jsp" />  
        <put-attribute name="sidebar" value="/WEB-INF/layouts/_sidebar.jsp" /> 
@@ -19,7 +18,7 @@
        <put-attribute name="title" value="Home Page" />  
        <put-attribute name="body" value="/WEB-INF/jsp/home/home.jsp" />  
    </definition>   
- 
- 
+   <definition name="demoPage" template="/WEB-INF/jsp/home/demo.jsp" /> 
+   <!-- <definition name="leftAccount" template="/WEB-INF/jsp/account/leftAccount.jsp" /> -->
  
 </tiles-definitions>
