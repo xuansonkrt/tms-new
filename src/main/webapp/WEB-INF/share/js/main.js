@@ -15,4 +15,4 @@ function ajaxUpdate(method,areaId,url,data){
             //$('#showresults').slideDown('slow')
         }
     });
-}
+} 
