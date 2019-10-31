@@ -1,3 +1,4 @@
+<%@ page pageEncoding="UTF-8" %>
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <ul class="nav">
     <li class="nav-item nav-profile">
@@ -20,7 +21,7 @@
         <i class="mdi mdi-home menu-icon"></i>
       </a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
         <span class="menu-title">Basic UI Elements</span>
         <i class="menu-arrow"></i>
@@ -37,6 +38,27 @@
       <a class="nav-link" href="/demo">
         <span class="menu-title">Demo</span>
         <i class="mdi mdi-contacts menu-icon"></i>
+      </a>
+    </li> -->
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/category">
+        <span class="menu-title">Quản lý danh mục</span>
+        <i class="mdi mdi-package-variant menu-icon"></i>
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/organization">
+        <span class="menu-title">Quản lý đơn vị</span>
+        <i class="mdi mdi-unity menu-icon"></i>
+      </a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="/teacher">
+        <span class="menu-title">Quản lý giáo viên</span>
+        <i class="mdi mdi-face menu-icon"></i>
       </a>
     </li>
     
