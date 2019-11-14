@@ -17,8 +17,11 @@
    <definition name="homePage" extends="base.definition">  
        <put-attribute name="title" value="Home Page" />  
        <put-attribute name="body" value="/WEB-INF/jsp/home/home.jsp" />  
-   </definition>   
+   </definition>
    <definition name="demoPage" template="/WEB-INF/jsp/home/demo.jsp" /> 
    <!-- <definition name="leftAccount" template="/WEB-INF/jsp/account/leftAccount.jsp" /> -->
- 
+   <definition name="homePageDemo" extends="base.definition">  
+       <put-attribute name="title" value="Home Page Demo" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/home/demo2.jsp" />  
+   </definition>
 </tiles-definitions>
