@@ -1,7 +1,13 @@
 package application.config;
 
+import org.apache.coyote.http11.AbstractHttp11Protocol;
+import org.apache.tomcat.util.http.LegacyCookieProcessor;
+import org.springframework.boot.web.embedded.tomcat.TomcatConnectorCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -35,5 +41,44 @@ public class WebConfig  extends WebMvcConfigurerAdapter {
         tconf.setDefinitions(new String[] { "/WEB-INF/tiles/tiles.xml" });
         return tconf;
 
+    }
+    
+//    @Bean
+//    public TomcatEmbeddedServletContainerFactory tomcatEmbedded() {
+//        TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory();
+//
+//        tomcat.addConnectorCustomizers((TomcatConnectorCustomizer) connector -> {
+//            if ((connector.getProtocolHandler() instanceof AbstractHttp11Protocol<?>)) {
+//                ((AbstractHttp11Protocol<?>) connector.getProtocolHandler()).setMaxSwallowSize(-1);
+//            }
+//        });
+//        return tomcat;
+//    }
+//
+//    /**
+//     * Fix bean cookie
+//     *
+//     * @return
+//     */
+//    @Bean
+//    public EmbeddedServletContainerCustomizer customizer() {
+//        return container -> {
+//            if (container instanceof TomcatEmbeddedServletContainerFactory) {
+//                TomcatEmbeddedServletContainerFactory tomcat = (TomcatEmbeddedServletContainerFactory) container;
+//                tomcat.addContextCustomizers(context -> context.setCookieProcessor(new LegacyCookieProcessor()));
+//            }
+//        };
+//    }
+
+
+    @Bean(name = "passwordEncoder")
+    public PasswordEncoder getPasswordEncoder() {
+        PasswordEncoder encoder = new BCryptPasswordEncoder();
+        return encoder;
+    }
+
+    @Bean
+    public AccessDeniedHandler accessDeniedHandler() {
+        return new CustomAccessDeniedHandler();
     }
 }
