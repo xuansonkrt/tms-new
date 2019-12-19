@@ -25,32 +25,22 @@
   <body>
     <div class="container-scroller">
     
-      <!-- partial:../partials/_navbar.html -->
       <tiles:insertAttribute name="navbar" />
-      <!-- partial -->
       
       <div class="container-fluid page-body-wrapper">
       
-        <!-- partial:../partials/_sidebar.html -->
         <tiles:insertAttribute name="sidebar" />
-        <!-- partial -->
         
         <div class="main-panel">
           <div class="content-wrapper">
               <tiles:insertAttribute name="body" />
           </div>
-          <!-- content-wrapper ends -->
           
-          <!-- partial:../partials/_footer.html -->
           <tiles:insertAttribute name="footer" />
-          <!-- partial -->
           
         </div>
-        <!-- main-panel ends -->
       </div>
-      <!-- page-body-wrapper ends -->
     </div>
-    <!-- container-scroller -->
     <!-- plugins:js -->
     <script language="JavaScript" type="text/javascript"  src="${pageContext.request.contextPath}/assets/js/jquery-3.4.1.min.js" ></script>
     <script language="JavaScript" type="text/javascript"  src="${pageContext.request.contextPath}/assets/vendors/js/vendor.bundle.base.js"></script>

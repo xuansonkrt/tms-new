@@ -13,15 +13,31 @@
        <put-attribute name="footer" value="/WEB-INF/layouts/_footer.jsp" />
    </definition>  
  
+ 
+  <!-- <definition name="leftAccount" template="/WEB-INF/jsp/account/leftAccount.jsp" /> -->
+   <definition name="homePageDemo" extends="base.definition">  
+       <put-attribute name="title" value="Home Page Demo" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/home/demo2.jsp" />  
+   </definition>
+   
    <!-- Home Page -->
    <definition name="homePage" extends="base.definition">  
        <put-attribute name="title" value="Home Page" />  
        <put-attribute name="body" value="/WEB-INF/jsp/home/home.jsp" />  
    </definition>
    <definition name="demoPage" template="/WEB-INF/jsp/home/demo.jsp" /> 
-   <!-- <definition name="leftAccount" template="/WEB-INF/jsp/account/leftAccount.jsp" /> -->
-   <definition name="homePageDemo" extends="base.definition">  
-       <put-attribute name="title" value="Home Page Demo" />  
-       <put-attribute name="body" value="/WEB-INF/jsp/home/demo2.jsp" />  
+   <definition name="dashboardView" template="/WEB-INF/jsp/home/dashboard.jsp" /> 
+    <!--Dashboard-->
+   <definition name="dashboardPage" extends="base.definition">  
+       <put-attribute name="title" value="Dashboard" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/home/dashboard.jsp" />  
    </definition>
+   
+   <!-- Home Page -->
+   <definition name="categoryPage" extends="base.definition">  
+       <put-attribute name="title" value="Quản lý danh mục" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/category/categoryIndex.jsp" />  
+   </definition>
+   <definition name="categoryAdd" template="/WEB-INF/jsp/category/categoryAdd.jsp" /> 
+   <definition name="categoryTypeAdd" template="/WEB-INF/jsp/category/categoryTypeAdd.jsp" /> 
 </tiles-definitions>

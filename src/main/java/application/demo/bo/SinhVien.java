@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.MultipartFile;
 
 
 
@@ -38,7 +41,22 @@ public class SinhVien {
     @Column(name = "idlopcn")
     private int idLopCN;
 
+    @Transient
+    private MultipartFile file;
     
+    
+    
+    public MultipartFile getFile() {
+        return file; 
+    }
+
+
+    
+    public void setFile(MultipartFile file) {
+        this.file = file;
+    }
+
+
     public int getId() {
         return id;
     }
@@ -108,9 +126,5 @@ public class SinhVien {
         this.idLopCN = idLopCN;
     }
 
-    
-    
 
-    
-    
 }

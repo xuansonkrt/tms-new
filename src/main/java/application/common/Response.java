@@ -1,10 +1,13 @@
 package application.common;
 
-public class Response {
 
+public class Response {
     private String status;
     private Object data;
-
+    private String type;
+    private String code;
+    private String message;
+    
     public String getStatus() {
         return status;
     }
@@ -21,4 +24,35 @@ public class Response {
         this.data = data;
     }
 
+    
+    public String getType() {
+        return type;
+    }
+
+    
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    
+    public String getCode() {
+        return code;
+    }
+
+    
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    
+    public String getMessage() {
+        return message;
+    }
+
+    
+    public void setMessage(String message) {
+        this.message = message;
+    }
+    
+    
 }

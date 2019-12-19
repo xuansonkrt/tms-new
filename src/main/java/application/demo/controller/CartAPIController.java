@@ -6,10 +6,16 @@ import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import application.common.Response;
 import application.demo.bo.HocLop;
@@ -168,6 +174,80 @@ public class CartAPIController {
         Response response = new Response();
         response.setStatus("OK");
         response.setData(hocLopDAO.findAll());
+        return response;
+    }
+    
+    @GetMapping("/fake5")
+    public @ResponseBody Response fake5() {
+        Double[] point = new Double[] {0D,1.0,1.5,2.0,2.5,3.0,3.5,3.7,4.0};
+        String[] point2 = new String[] {"F","D","D+","C","C+","B","B+","A","A+"};
+        List<HocLop> lstLopHocPhan = hocLopDAO.findAll();
+        for (HocLop hocLop : lstLopHocPhan) {
+            Double cc = ThreadLocalRandom.current().nextInt(0, 100)/10.0;
+            Double tx = ThreadLocalRandom.current().nextInt(0, 100)/10.0;
+            Double thi = ThreadLocalRandom.current().nextInt(0, 100)/10.0;
+            hocLop.setDiemCC(cc.toString());
+            hocLop.setDiemTX(tx.toString());
+            if(cc>0 && tx >0) {
+                hocLop.setDiemThi(thi.toString());
+                hocLop.setDiemTB(Math.round((cc*0.1+tx*0.3+thi*0.6) * 10) / 10.0);
+                if(hocLop.getDiemTB()>=9) {
+                    hocLop.setDiemHS4(4.0);
+                    hocLop.setDiemBangChu("A+");
+                } else if(hocLop.getDiemTB()>=8.5) {
+                    hocLop.setDiemHS4(3.7);
+                    hocLop.setDiemBangChu("A");
+                } else if(hocLop.getDiemTB()>=8.0) {
+                    hocLop.setDiemHS4(3.5);
+                    hocLop.setDiemBangChu("B+");
+                } else if(hocLop.getDiemTB()>=7.0) {
+                    hocLop.setDiemHS4(3.0);
+                    hocLop.setDiemBangChu("B");
+                } else if(hocLop.getDiemTB()>=6.5) {
+                    hocLop.setDiemHS4(2.5);
+                    hocLop.setDiemBangChu("C+");
+                } else if(hocLop.getDiemTB()>=5.5) {
+                    hocLop.setDiemHS4(2.0);
+                    hocLop.setDiemBangChu("C");
+                } else if(hocLop.getDiemTB()>=5.0) {
+                    hocLop.setDiemHS4(1.5);
+                    hocLop.setDiemBangChu("D+");
+                } else if(hocLop.getDiemTB()>=4) {
+                    hocLop.setDiemHS4(1.0);
+                    hocLop.setDiemBangChu("D");
+                } else {
+                    hocLop.setDiemHS4(0.0);
+                    hocLop.setDiemBangChu("F");
+                }
+            } else {
+                hocLop.setDiemHS4(0.0);
+                hocLop.setDiemBangChu("F");
+            }
+            hocLopDAO.save(hocLop);
+        }
+        
+        
+        Response response = new Response();
+        response.setStatus("OK");
+        response.setData(hocLopDAO.findAll());
+        return response;
+    }
+    @GetMapping("/custom")
+    public @ResponseBody Response demo(@RequestBody Integer idLopCN) {
+        
+        Response response = new Response();
+        response.setStatus("OK");
+        response.setData(sinhVienDAO.findByIdLopCN(idLopCN));
+        return response;
+    }
+    
+    @PostMapping(value="/test",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public @ResponseBody Response test(@ModelAttribute  SinhVien sinhVien
+            , @RequestPart ( "imageFile") List<MultipartFile> imageFile) {
+        
+        Response response = new Response();
+        response.setStatus("OK");
+        response.setData(sinhVien);
         return response;
     }
 }
