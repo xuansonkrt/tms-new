@@ -59,9 +59,12 @@
           <li class="nav-item"> <a class="nav-link" href="/category">Danh mục dùng chung</a></li>
           <li class="nav-item"> <a class="nav-link" href="#">Danh mục học kỳ</a></li>
           <li class="nav-item"> <a class="nav-link" href="#">Danh mục định mức</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#">Hình thức môn học</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#">Hình thức viết báo</a></li>
         </ul>
       </div>
     </li>
+    
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic3" aria-expanded="false" aria-controls="ui-basic3">
         <span class="menu-title">Kế hoạch đào tạo</span>
