@@ -14182,7 +14182,7 @@ body{
 	padding: 0px 5px;
 	font-size: 1rem;
 }
-.card-body{
+.card-body-cus{
 	min-height: 30rem;
 }
 .list-cat-type{
@@ -14212,7 +14212,7 @@ thead{
 	color: #fff;
 }
 
-.modal-title{
+.modal-title, .btn {
 	font-family: Arial, Helvetica, sans-serif !important;
 }
 .pointer{
@@ -14220,6 +14220,10 @@ thead{
 }
 .btnEdit{
 	color: blue;
+}
+.select-cat:hover{
+	text-decoration: underline;
+	color: #b66dff;
 }
 .btnEdit:hover{
 	color: #00ecfc;

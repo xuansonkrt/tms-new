@@ -25,7 +25,7 @@
         <div>
             <div class="form-group">
                 <div class='input-group date' id=''>
-                    <input type='text' name="<%=name%>"  id="<%=id%>"  class="form-control" />
+                    <input type='text' name="<%=name%>" value="<%=value%>" id="<%=id%>"  class="form-control" />
                     <span class="input-group-addon" onclick="$('#<%=id%>').trigger('focus');">
                         <span class="fa fa-calendar"></span>
                     </span>

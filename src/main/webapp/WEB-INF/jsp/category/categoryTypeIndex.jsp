@@ -4,17 +4,21 @@
 <%@taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
 <style>
 	.col-3{
-		max-width: 30%;
+		width: 30%;
 	}
 	.col-9{
-		max-width: 70%;
+		width: 70%;
 	}
+	.table-header {
+		background-color: #03a9f3 !important;
+    	color: #fff  !important;
+    }
 </style>
 <div class="list-cat-type">
 	<logic:notEmpty name="lstCategoryType">
 		<div class="table-responsive-2">
 			<table class="table table-striped table-bordered">
-				<thead>
+				<thead class="table-header">
 					<tr class="text-center">
 						<td>STT</td>
 						<td>Loại danh mục</td>
@@ -26,7 +30,7 @@
 					<c:forEach items="${lstCategoryType}" var="cat" varStatus="loop">
 						<tr>
 							<td class="text-center"><c:out value="${loop.index+1}" /></td>
-							<td class="pointer" onclick="prepareShowList('${cat.id}')"><c:out value="${cat.name}" /></td>
+							<td class="select-cat pointer" onclick="prepareShowList('${cat.id}')"><c:out value="${cat.name}" /></td>
 							<td class="text-center pointer btnEdit"  onclick="prepareUpdate('${cat.id}')"><i class="fa fa-edit"></i></td>
 							<td class="text-center pointer btnDel" onclick="prepareDelete('${cat.id}')"><i class="fa fa-trash"></i></td>
 						</tr>

@@ -7,8 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity(name = "category_type")
+@Entity
+@Table(name = "category_type")
 public class CategoryTypeBO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

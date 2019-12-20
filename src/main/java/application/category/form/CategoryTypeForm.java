@@ -10,8 +10,10 @@ public class CategoryTypeForm {
     private Long id;
     private String code;
     private String name;
-    private String effectDate;
-    private String expiredDate;
+    private Date effectDate;
+    private Date expiredDate;
+    private String effectDateShow;
+    private String expiredDateShow;
     private Date createdDate;
     private Long createdBy;
     private Date modifiedDate;
@@ -41,22 +43,48 @@ public class CategoryTypeForm {
         this.name = name;
     }
     
-    public String getEffectDate() {
+    
+    
+    
+    public Date getEffectDate() {
         return effectDate;
     }
+
     
-    public void setEffectDate(String effectDate) {
+    public void setEffectDate(Date effectDate) {
         this.effectDate = effectDate;
     }
+
     
-    public String getExpiredDate() {
+    public Date getExpiredDate() {
         return expiredDate;
     }
+
     
-    public void setExpiredDate(String expiredDate) {
+    public void setExpiredDate(Date expiredDate) {
         this.expiredDate = expiredDate;
     }
+
     
+    public String getEffectDateShow() {
+        return effectDateShow;
+    }
+
+    
+    public void setEffectDateShow(String effectDateShow) {
+        this.effectDateShow = effectDateShow;
+    }
+
+    
+    public String getExpiredDateShow() {
+        return expiredDateShow;
+    }
+
+    
+    public void setExpiredDateShow(String expiredDateShow) {
+        this.expiredDateShow = expiredDateShow;
+    }
+
     public Date getCreatedDate() {
         return createdDate;
     }

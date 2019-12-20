@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/datepicker3.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/toastr.min.css">
     <link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
+    
+    <script language="JavaScript" type="text/javascript"  src="${pageContext.request.contextPath}/assets/js/jquery-3.4.1.min.js" ></script>
   </head>
   <body>
     <div class="container-scroller">
@@ -50,8 +52,10 @@
     </div>
       <!-- Modal -->
 	<div id="myModal" class="modal fade" role="dialog"> </div>
+	
+	<div id="saveResult" style="display: none;"> </div>
     <!-- plugins:js -->
-    <script language="JavaScript" type="text/javascript"  src="${pageContext.request.contextPath}/assets/js/jquery-3.4.1.min.js" ></script>
+    
     <script language="JavaScript" type="text/javascript"  src="${pageContext.request.contextPath}/assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->

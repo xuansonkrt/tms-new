@@ -40,4 +40,9 @@
    </definition>
    <definition name="categoryAdd" template="/WEB-INF/jsp/category/categoryAdd.jsp" /> 
    <definition name="categoryTypeAdd" template="/WEB-INF/jsp/category/categoryTypeAdd.jsp" /> 
+   <definition name="lstCategoryType" template="/WEB-INF/jsp/category/categoryTypeIndex.jsp" /> 
+   <definition name="categoryList" template="/WEB-INF/jsp/category/categoryList.jsp" /> 
+   
+   
+   <definition name="updateAndClose" template="/WEB-INF/jsp/common/updateAndClose.jsp" /> 
 </tiles-definitions>

@@ -21,7 +21,9 @@ function ajaxUpdate(method,areaId,url,data,callback){
         success: function (data) {
 //            var result = $('<div />').append(data).find('#showresults').html();
             $('#'+areaId).html(data);
-            callback();
+            if(callback){
+            	callback();
+            }
         },
         error: function (xhr, status) {
             console.log("Sorry, there was a problem!");
@@ -95,8 +97,8 @@ function getFormData(formName){
 	   return returnData;    
 	}
 
-function confirmDelete(mes){
-	mes = mes ? "Bạn có muốn xóa dữ liệu?" : mes;
+function confirmDelete(mes, callback){
+	mes = mes ? mes : "Bạn có muốn xóa dữ liệu?";
 	swal({
         title: mes,
         text: "Bạn sẽ không có khả năng khôi phục!",
@@ -107,14 +109,16 @@ function confirmDelete(mes){
         confirmButtonText: '<i class="fa fa-trash"></i> Xóa',
         cancelButtonText:'<i class="fa fa-close"></i> Hủy bỏ'
     }).then(function(result)  {
-        /*if (result.value) {
-        	
-        }*/
+    	if (result.value) {
+        	if(callback){
+        		callback();
+        	}
+        }
     	return result.value;
     });
 }
-function confirmSave(mes){
-	mes = mes ? "Bạn có muốn lưu dữ liệu?" : mes;
+function confirmSave(mes,callback){
+	mes = mes ? mes : "Bạn có muốn lưu dữ liệu?";
 	swal({
         title: mes,
 //        text: "Bạn sẽ không có khả năng khôi phục!",
@@ -125,9 +129,11 @@ function confirmSave(mes){
         confirmButtonText: '<i class="fa fa-save"></i> Lưu lại',
         cancelButtonText:'<i class="fa fa-close"></i> Hủy bỏ'
     }).then(function(result)  {
-        /*if (result.value) {
-        	
-        }*/
-    	return result.value;
+        if (result.value) {
+        	if(callback){
+        		callback();
+        	}
+        }
+    	//return result.value;
     });
 }
