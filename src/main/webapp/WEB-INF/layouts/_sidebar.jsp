@@ -33,32 +33,72 @@
           <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
         </ul>
       </div>
-    </li>
-    <li class="nav-item">
+    </li> -->
+   <!--  <li class="nav-item">
       <a class="nav-link" href="/demo">
         <span class="menu-title">Demo</span>
         <i class="mdi mdi-contacts menu-icon"></i>
       </a>
     </li> -->
     
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link" href="/category">
         <span class="menu-title">Quản lý danh mục</span>
         <i class="mdi mdi-package-variant menu-icon"></i>
       </a>
-    </li>
-    
+    </li> -->
     <li class="nav-item">
-      <a class="nav-link" href="/organization">
-        <span class="menu-title">Quản lý đơn vị</span>
-        <i class="mdi mdi-unity menu-icon"></i>
+      <a class="nav-link" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic2">
+        <span class="menu-title">Quản lý danh mục</span>
+        <i class="menu-arrow"></i>
+         <i class="mdi mdi-package-variant menu-icon"></i>
       </a>
+      <div class="collapse" id="ui-basic2">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="#">Danh mục đơn vị</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/category">Danh mục dùng chung</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#">Danh mục học kỳ</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#">Danh mục định mức</a></li>
+        </ul>
+      </div>
     </li>
-    
     <li class="nav-item">
-      <a class="nav-link" href="/teacher">
+      <a class="nav-link" data-toggle="collapse" href="#ui-basic3" aria-expanded="false" aria-controls="ui-basic3">
+        <span class="menu-title">Kế hoạch đào tạo</span>
+        <i class="menu-arrow"></i>
+         <i class="mdi mdi-briefcase-check menu-icon"></i>
+      </a>
+      <div class="collapse" id="ui-basic3">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="#">Học phần</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#">Lớp học phần</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">
         <span class="menu-title">Quản lý giáo viên</span>
         <i class="mdi mdi-face menu-icon"></i>
+        
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic1">
+        <span class="menu-title">Báo cáo cá nhân</span>
+        <i class="menu-arrow"></i>
+         <i class="mdi mdi-message-bulleted menu-icon"></i>
+      </a>
+      <div class="collapse" id="ui-basic1">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="#">Tải đào tạo</a></li>
+          <li class="nav-item"> <a class="nav-link" href="#">Tải nghiên cứu khoa học</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <span class="menu-title">Báo cáo thống kê</span>
+        <i class="mdi mdi-chart-areaspline menu-icon"></i>
       </a>
     </li>
     
