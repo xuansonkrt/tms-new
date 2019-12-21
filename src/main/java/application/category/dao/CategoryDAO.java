@@ -42,7 +42,7 @@ public interface CategoryDAO extends JpaRepository<CategoryBO, Long> {
                 + "     , DATE_FORMAT(c.effect_date,'%d/%m/%Y')  as effectDateShow "
                 + "     , DATE_FORMAT(c.expired_date,'%d/%m/%Y') as expiredDateShow "
                 
-                + "     , c.order as `order` "
+                + "     , c.the_order as theOrder "
                 + " FROM category c ";
 
         StringBuilder strCondition = new StringBuilder(" WHERE 1 = 1 ");
@@ -51,7 +51,7 @@ public interface CategoryDAO extends JpaRepository<CategoryBO, Long> {
         CommonUtil.filter(form.getName(), strCondition, paramList, "c.name");
         CommonUtil.filter(form.getCategoryTypeId(), strCondition, paramList, "c.category_type_id");
 
-        String orderBy = " ORDER BY id DESC ";
-        return uttData.findPaginationQuery(nativeSQL + strCondition.toString(), orderBy, paramList, CategoryBean.class);
+        String orderBy = " ORDER BY c.the_order ASC ";
+        return uttData.findPaginationQuery(nativeSQL + strCondition.toString(), orderBy, paramList, CategoryBean.class, Integer.MAX_VALUE);
     }
 }

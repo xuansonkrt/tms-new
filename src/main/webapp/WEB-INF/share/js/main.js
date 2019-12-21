@@ -1,3 +1,13 @@
+function showError(mes){
+	mes = mes ?  mes : "Có lỗi xảy ra!";
+	toastr["error"](mes);
+}
+
+function showSuccess(mes){
+	mes = mes ?  mes : "Thao tác thực hiện thành công!";
+	toastr["success"](mes);
+}
+
 //$.fn.datepicker.dates['vn'] = {
 //        	    days:  ['Chủ nhật', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7'],
 //        	    daysShort: ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],

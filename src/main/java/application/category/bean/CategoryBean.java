@@ -15,18 +15,35 @@ public class CategoryBean {
     private Date modifiedDate;
     private Long modifiedBy;
     private Long categoryTypeId;
-    private Long order;
+    private Long theOrder;
+    private String categoryTypeName;
     
     
     
-    public Long getOrder() {
-        return order;
+    public String getCategoryTypeName() {
+        return categoryTypeName;
     }
 
+
     
-    public void setOrder(Long order) {
-        this.order = order;
+    public void setCategoryTypeName(String categoryTypeName) {
+        this.categoryTypeName = categoryTypeName;
     }
+
+
+    
+    public Long getTheOrder() {
+        return theOrder;
+    }
+
+
+
+    
+    public void setTheOrder(Long theOrder) {
+        this.theOrder = theOrder;
+    }
+
+
 
     public Long getId() {
         return id;

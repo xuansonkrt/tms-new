@@ -45,7 +45,7 @@
                     </div>
                     
                     <div class="area-button">
-                         <button class="btn btn-primary" onclick="actionSearchCategory()">
+                         <button class="btn btn-primary" onclick="actionSearchCategory(); return false;">
 	                        <i class="fa fa-search pr-1"></i>Tìm kiếm
 	                    </button>
                     </div>
@@ -55,14 +55,14 @@
         
         <div class="card mt-3">
             <div class="card-header">
-                <label class="title-card"><i class="fa fa-list pr-1"></i>Danh sách danh mục</label>
+                <label class="title-card"><i class="fa fa-list pr-1"></i>Danh sách danh mục - <span id="txtCategoryTypeName"></span></label>
                 <div style="float: right;">
-                    <button class="btn btn-primary" id="btn-add-cat-type" onclick="addCategoryType()">
+                    <button class="btn btn-primary" id="btn-add-cat-type" onclick="addCategory()">
                         <i class="fa fa-plus pr-1"></i>Thêm mới
                     </button>
                 </div>
             </div>
-            <div class="card-body" id="lstCategoryArea">
+            <div class="card-body" id="lstCategoryArea" style="max-height:350px; overflow-y : auto;">
                 <jsp:include page="categoryList.jsp"></jsp:include>
             </div>
         </div>
@@ -76,9 +76,32 @@
             $('#myModal').modal('show');
         });
     }
+    
+    function addCategory(){
+         if($('#categoryTypeId').val() == ""){
+         	showError("Chưa chọn loại danh mục!");
+         	return;
+         }
+        var areaId ="myModal";
+        var url="/category/add"
+        var data={
+        	categoryTypeId : $('#categoryTypeId').val()
+        };
+        ajaxUpdate("POST",areaId,url,data, function(){
+            $('#myModal').modal('show');
+        });
+    }
+    
     function prepareUpdate(id){
         var areaId ="myModal";
         var url="/category-type/"+id;
+        ajaxUpdate("GET",areaId,url,null, function(){
+            $('#myModal').modal('show');
+        });
+    }
+    function prepareUpdateCategory(id){
+        var areaId ="myModal";
+        var url="/category/"+id;
         ajaxUpdate("GET",areaId,url,null, function(){
             $('#myModal').modal('show');
         });
@@ -90,8 +113,16 @@
     	})
         
     }
-    function prepareShowList(id){
+    function prepareDeleteCategory(id){
+    	confirmDelete(null, function(){
+    		var url ="/category/delete/"+id;
+            ajaxSendData("POST","saveResult",url,null);
+    	})
+        
+    }
+    function prepareShowList(name,id){
         $('#categoryTypeId').val(id);
+        $('#txtCategoryTypeName').text(name);
         actionSearchCategory();
     }
     
@@ -102,8 +133,21 @@
             console.log('data', getFormData('formSave'));
         });
     }
+    
+    function actionSaveCategory(){
+        confirmSave(null, function(){
+            var url ="/category";
+            ajaxSendData("POST","saveResult",url,getFormData('formSave'));
+            console.log('data', getFormData('formSave'));
+        });
+    }
+    
     function afterSaveCategoryType(){
         searchCategoryType();
+    }
+    
+    function afterSaveCategory(){
+    	actionSearchCategory();
     }
     function searchCategoryType(){
         var areaId ="categoryTypeArea";
@@ -118,10 +162,23 @@
         var url="/category/search"
         var data = getFormData('formSearch');
         ajaxUpdate("GET",areaId,url,data,null);
+        
     }
     $(document).ready(function(){
         $("#nameSearch").on('keyup',function(){
             searchCategoryType()
         });
+        
+        /* $(".pagelinks>a").on('click',function(){
+           alert('sonnx');
+           return;
+        });
+        
+        
+        var el  = $(".pagelinks>a");
+        for (var i = 0; i < el.lenght -1; i++) {
+        	console.log('el',$(el[i]))
+			$(el[i]).attr("onclick",'ajaxUpdate("GET","lstCategoryArea",url,getFormData("formSearch"),null); return;');
+		} */
     })
 </script>

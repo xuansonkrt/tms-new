@@ -15,17 +15,19 @@ public class CategoryForm {
     private Date modifiedDate;
     private Long modifiedBy;
     private Long categoryTypeId;
-    private Long order;
+    private Long theOrder;
     
-    
-    public Long getOrder() {
-        return order;
+
+    public Long getTheOrder() {
+        return theOrder;
     }
 
+
     
-    public void setOrder(Long order) {
-        this.order = order;
+    public void setTheOrder(Long theOrder) {
+        this.theOrder = theOrder;
     }
+
 
     public Long getId() {
         return id;

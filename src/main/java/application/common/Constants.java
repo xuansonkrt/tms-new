@@ -15,6 +15,11 @@ public class Constants {
         public static final String invalidPermission = "invalidPermission";
     }
 
+    public static class RESPONSE_PAGE {
+
+        public static final String UPDATE_AND_CLOSE = "updateAndClose";
+    }
+    
     public static class RESPONSE_CODE {
 
         public static final String SUCCESS = "success";

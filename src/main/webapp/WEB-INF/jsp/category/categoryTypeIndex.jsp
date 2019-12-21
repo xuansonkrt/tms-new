@@ -30,7 +30,7 @@
 					<c:forEach items="${lstCategoryType}" var="cat" varStatus="loop">
 						<tr>
 							<td class="text-center"><c:out value="${loop.index+1}" /></td>
-							<td class="select-cat pointer" onclick="prepareShowList('${cat.id}')"><c:out value="${cat.name}" /></td>
+							<td class="select-cat pointer" onclick="prepareShowList('${cat.name}','${cat.id}')"><c:out value="${cat.name}" /></td>
 							<td class="text-center pointer btnEdit"  onclick="prepareUpdate('${cat.id}')"><i class="fa fa-edit"></i></td>
 							<td class="text-center pointer btnDel" onclick="prepareDelete('${cat.id}')"><i class="fa fa-trash"></i></td>
 						</tr>
