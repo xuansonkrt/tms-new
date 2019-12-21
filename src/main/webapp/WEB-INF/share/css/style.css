@@ -14261,3 +14261,15 @@ thead{
 input[type="text"]:disabled {
 	background: #dddddd;
 }
+
+.select2{
+	width: 100% !important;
+}
+.select2 .select2-selection{
+	height: 2rem;
+}
+
+.select2-container--default .select2-selection--single{
+	border: 1px solid #ebedf2 !important;
+    border-radius: 2px !important;
+}

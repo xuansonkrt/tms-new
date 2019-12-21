@@ -65,4 +65,8 @@ public class Constants {
         String SYS_CAT = "SYS_CAT";
         String SYS_CAT_CHILD = "SYS_CAT_CHILD";
     }
+    
+    public interface CATEGORY_TYPE {
+        String CDNG = "CDNG";
+    }
 }

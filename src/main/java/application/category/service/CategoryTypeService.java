@@ -32,8 +32,17 @@ public class CategoryTypeService {
         return categoryTypeDAO.findByNameIgnoreCaseContaining(name);
     }
     
+    
     public List<CategoryTypeBO> findByCodeIgnoreCase(String code){
         return categoryTypeDAO.findByCodeIgnoreCase(code);
+    }
+    
+    public CategoryTypeBO findOneByCodeIgnoreCase(String code){
+        List<CategoryTypeBO> list = categoryTypeDAO.findByCodeIgnoreCase(code);
+        if(!CommonUtil.isNullOrEmpty(list)) {
+            return list.get(0);
+        } 
+        return null;
     }
     
     @Modifying
@@ -49,4 +58,5 @@ public class CategoryTypeService {
             return true;
         }
     }
+    
 }

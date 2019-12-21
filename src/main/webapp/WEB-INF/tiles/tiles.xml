@@ -51,6 +51,13 @@
    <definition name="termAdd" template="/WEB-INF/jsp/term/termAdd.jsp" /> 
    <definition name="termList" template="/WEB-INF/jsp/term/termList.jsp" />
    
+   <!-- Danh mục định mức -->
+   <definition name="targetPage" extends="base.definition">  
+       <put-attribute name="title" value="Danh mục định mức" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/target/targetIndex.jsp" />  
+   </definition>
+   <definition name="targetForm" template="/WEB-INF/jsp/target/targetForm.jsp" /> 
+   <definition name="targetList" template="/WEB-INF/jsp/target/targetList.jsp" />
    
    <definition name="updateAndClose" template="/WEB-INF/jsp/common/updateAndClose.jsp" /> 
 </tiles-definitions>

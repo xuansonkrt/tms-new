@@ -57,4 +57,8 @@ public class CategoryService {
     public void delete(Long categoryId) {
         categoryDAO.deleteById(categoryId);
     }
+    
+    public List<CategoryBean> getByCategoryTypeCode( String categoryTypeCode) {
+        return categoryDAO.getByCategoryTypeCode(uttData, categoryTypeCode);
+    }
 }

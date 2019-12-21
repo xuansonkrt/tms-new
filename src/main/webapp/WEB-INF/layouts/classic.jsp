@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/datepicker3.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/toastr.min.css">
     <link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
-    
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
     <script language="JavaScript" type="text/javascript"  src="${pageContext.request.contextPath}/assets/js/jquery-3.4.1.min.js" ></script>
   </head>
   <body>
@@ -74,6 +74,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.9.0/sweetalert2.all.min.js"></script>
     <%-- <script language="JavaScript" type="text/javascript"  src="${pageContext.request.contextPath}/assets/js/bootstrap.js" ></script> --%>
     <script language="JavaScript" type="text/javascript"  src="${pageContext.request.contextPath}/assets/js/bootstrap-datepicker.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
     <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
     <script>
 	$(document).ready(function(){

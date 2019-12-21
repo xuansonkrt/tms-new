@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 
+import org.hibernate.SQLQuery;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -53,5 +54,19 @@ public interface CategoryDAO extends JpaRepository<CategoryBO, Long> {
 
         String orderBy = " ORDER BY c.the_order ASC ";
         return uttData.findPaginationQuery(nativeSQL + strCondition.toString(), orderBy, paramList, CategoryBean.class, Integer.MAX_VALUE);
+    }
+    
+    public default List<CategoryBean> getByCategoryTypeCode(UttData uttData, String categoryTypeCode) {
+        String hql = "SELECT " 
+                + "    c.id as id "
+                + "    ,c.name as name "
+                + " FROM category c "
+                + " INNER JOIN category_type ct ON ct.id=c.category_type_id "
+                + " WHERE 1 = 1 AND LOWER(ct.code) = :categoryTypeCode "
+                + " ORDER BY c.name ASC ";
+        SQLQuery query = uttData.createSQLQuery(hql);
+        query.setParameter("categoryTypeCode", categoryTypeCode.toLowerCase());
+        uttData.setResultTransformer(query, CategoryBean.class);
+        return query.list();
     }
 }

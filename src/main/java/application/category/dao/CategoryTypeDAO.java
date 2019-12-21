@@ -21,4 +21,6 @@ public interface CategoryTypeDAO extends JpaRepository<CategoryTypeBO, Long> {
     
     @Query("SELECT c FROM CategoryTypeBO c WHERE LOWER(c.code)=LOWER(:code) AND c.id<>:id")
     public List<CategoryTypeBO> checkCode(@Param("id")Long id,@Param("code") String code);
+    
+    
 }

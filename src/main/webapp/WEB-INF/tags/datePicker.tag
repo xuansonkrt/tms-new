@@ -10,7 +10,7 @@
 <%@ attribute name="value" %>
 
 <style>
-	thead{
+	.datepicker thead{
 		background-color: #fff !important;
 		color: #000 !important;
 	}
