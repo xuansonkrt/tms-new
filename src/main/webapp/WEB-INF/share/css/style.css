@@ -14255,3 +14255,9 @@ thead{
 .modal-content{
 	border: none;
 }
+.form-group {
+    margin-bottom: 0.5rem !important;
+}
+input[type="text"]:disabled {
+	background: #dddddd;
+}

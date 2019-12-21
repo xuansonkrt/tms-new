@@ -34,9 +34,7 @@ public class CategoryService {
         return categoryDAO.getCategory(uttData, form, req);
     }
     
-    public CategoryBO findById(Long id) {
-        return categoryDAO.findById(id).orElse(null);
-    }
+    
     
     public boolean checkCode(Long id, String code){
         List<CategoryBO> lst = categoryDAO.checkCode(id, code);
@@ -49,6 +47,10 @@ public class CategoryService {
     
     public void saveOrUpdate(CategoryBO entity) {
         categoryDAO.save(entity);
+    }
+    
+    public CategoryBO findById(Long id) {
+        return categoryDAO.findById(id).orElse(null);
     }
     
     @Modifying

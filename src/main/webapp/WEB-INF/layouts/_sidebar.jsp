@@ -55,12 +55,12 @@
       </a>
       <div class="collapse" id="ui-basic2">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="#">Danh mục đơn vị</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/organization">Danh mục đơn vị</a></li>
           <li class="nav-item"> <a class="nav-link" href="/category">Danh mục dùng chung</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#">Danh mục học kỳ</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#">Danh mục định mức</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#">Hình thức môn học</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#">Hình thức viết báo</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/term">Danh mục học kỳ</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/target">Danh mục định mức</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/learning-type">Hình thức môn học</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/paper-type">Hình thức viết báo</a></li>
         </ul>
       </div>
     </li>

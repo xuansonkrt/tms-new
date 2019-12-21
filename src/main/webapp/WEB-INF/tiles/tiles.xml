@@ -35,13 +35,21 @@
    
    <!-- Home Page -->
    <definition name="categoryPage" extends="base.definition">  
-       <put-attribute name="title" value="Quản lý danh mục" />  
+       <put-attribute name="title" value="Danh mục dùng chung" />  
        <put-attribute name="body" value="/WEB-INF/jsp/category/categoryIndex.jsp" />  
    </definition>
    <definition name="categoryAdd" template="/WEB-INF/jsp/category/categoryAdd.jsp" /> 
    <definition name="categoryTypeAdd" template="/WEB-INF/jsp/category/categoryTypeAdd.jsp" /> 
    <definition name="lstCategoryType" template="/WEB-INF/jsp/category/categoryTypeIndex.jsp" /> 
    <definition name="categoryList" template="/WEB-INF/jsp/category/categoryList.jsp" /> 
+   
+   <!-- Danh mục học kỳ -->
+   <definition name="termPage" extends="base.definition">  
+       <put-attribute name="title" value="Danh mục học kỳ" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/term/termIndex.jsp" />  
+   </definition>
+   <definition name="termAdd" template="/WEB-INF/jsp/term/termAdd.jsp" /> 
+   <definition name="termList" template="/WEB-INF/jsp/term/termList.jsp" />
    
    
    <definition name="updateAndClose" template="/WEB-INF/jsp/common/updateAndClose.jsp" /> 
