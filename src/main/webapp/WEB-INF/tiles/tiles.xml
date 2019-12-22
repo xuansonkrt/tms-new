@@ -59,5 +59,20 @@
    <definition name="targetForm" template="/WEB-INF/jsp/target/targetForm.jsp" /> 
    <definition name="targetList" template="/WEB-INF/jsp/target/targetList.jsp" />
    
+   <!-- Danh mục hình thức môn học -->
+   <definition name="learningTypePage" extends="base.definition">  
+       <put-attribute name="title" value="Hình thức môn học" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/learningType/learningTypeIndex.jsp" />  
+   </definition>
+   <definition name="learningTypeForm" template="/WEB-INF/jsp/learningType/learningTypeForm.jsp" /> 
+   <definition name="learningTypeList" template="/WEB-INF/jsp/learningType/learningTypeList.jsp" />
+   
+   <!-- Danh mục hình viết báo -->
+   <definition name="paperTypePage" extends="base.definition">  
+       <put-attribute name="title" value="Hình thức viết báo" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/paperType/paperTypeIndex.jsp" />  
+   </definition>
+   <definition name="paperTypeForm" template="/WEB-INF/jsp/paperType/paperTypeForm.jsp" /> 
+   <definition name="paperTypeList" template="/WEB-INF/jsp/paperType/paperTypeList.jsp" />
    <definition name="updateAndClose" template="/WEB-INF/jsp/common/updateAndClose.jsp" /> 
 </tiles-definitions>
