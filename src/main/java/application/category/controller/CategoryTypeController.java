@@ -54,7 +54,7 @@ public class CategoryTypeController {
     
     @RequestMapping(value="/search", method=RequestMethod.GET)
     public String actionSearch(HttpServletRequest req, Model model, CategoryTypeForm form) {
-        List<CategoryTypeBO> lstCategoryType = categoryTypeService.findByNameIgnoreCaseContaining(form.getName());
+        List<CategoryTypeBean> lstCategoryType = categoryTypeService.getAllSearch(form.getName());
         req.setAttribute("lstCategoryType", lstCategoryType);
         return LIST_CATEGORY_TYPE;
     }

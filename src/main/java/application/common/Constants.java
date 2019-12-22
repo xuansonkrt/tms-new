@@ -69,5 +69,6 @@ public class Constants {
     public interface CATEGORY_TYPE {
         String CDNG = "CDNG";
         String EDU_LEVEL = "EDU_LEVEL";
+        String PAPER_LEVEL = "PAPER_LEVEL";
     }
 }

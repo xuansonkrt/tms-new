@@ -40,7 +40,7 @@ public class CategoryController {
     
     @RequestMapping
     public String categoryPage(HttpServletRequest req, Model model) {
-        List<CategoryTypeBO> lstCategoryType= categoryTypeService.findAll();
+        List<CategoryTypeBean> lstCategoryType= categoryTypeService.getAllSearch("");
         req.setAttribute("lstCategoryType", lstCategoryType);
         return CATEGORY_PAGE;
     }

@@ -7,7 +7,7 @@ public class PaperTypeForm {
     private String code;
     private String name;
     private String note;
-    private Long educationLevelId;
+    private Long paperLevelId;
     private Double researchPoint;
     private String unitName;
     private Double unit;
@@ -48,14 +48,18 @@ public class PaperTypeForm {
         this.note = note;
     }
     
-    public Long getEducationLevelId() {
-        return educationLevelId;
-    }
     
-    public void setEducationLevelId(Long educationLevelId) {
-        this.educationLevelId = educationLevelId;
-    }
     
+    
+    public Long getPaperLevelId() {
+        return paperLevelId;
+    }
+
+    
+    public void setPaperLevelId(Long paperLevelId) {
+        this.paperLevelId = paperLevelId;
+    }
+
     public Double getResearchPoint() {
         return researchPoint;
     }

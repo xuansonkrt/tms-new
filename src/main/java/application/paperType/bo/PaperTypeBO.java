@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "paper-type")
+@Table(name = "paper_type")
 public class PaperTypeBO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -27,7 +27,7 @@ public class PaperTypeBO {
     private String note;
     
     @Column(name = "paper_level_id")
-    private Long educationLevelId;
+    private Long paperLevelId;
 
     @Column(name = "research_point")
     private Double researchPoint;
@@ -91,16 +91,17 @@ public class PaperTypeBO {
     }
 
     
-    public Long getEducationLevelId() {
-        return educationLevelId;
+    public Long getPaperLevelId() {
+        return paperLevelId;
     }
 
-    
-    public void setEducationLevelId(Long educationLevelId) {
-        this.educationLevelId = educationLevelId;
-    }
 
     
+    public void setPaperLevelId(Long paperLevelId) {
+        this.paperLevelId = paperLevelId;
+    }
+
+
     public Double getResearchPoint() {
         return researchPoint;
     }

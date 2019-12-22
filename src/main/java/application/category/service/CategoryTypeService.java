@@ -7,12 +7,17 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
+import application.category.bean.CategoryTypeBean;
 import application.category.bo.CategoryTypeBO;
 import application.category.dao.CategoryTypeDAO;
 import application.common.CommonUtil;
+import application.common.UttData;
 
 @Service
 public class CategoryTypeService {
+    @Autowired
+    private UttData uttData;
+    
     @Autowired
     private CategoryTypeDAO categoryTypeDAO;
     
@@ -29,7 +34,7 @@ public class CategoryTypeService {
     }
     
     public List<CategoryTypeBO> findByNameIgnoreCaseContaining(String name){
-        return categoryTypeDAO.findByNameIgnoreCaseContaining(name);
+        return categoryTypeDAO.findByNameIgnoreCaseContainingOrderByIdDesc(name);
     }
     
     
@@ -59,4 +64,8 @@ public class CategoryTypeService {
         }
     }
     
+    
+    public List<CategoryTypeBean> getAllSearch( String name) {
+        return categoryTypeDAO.getAllSearch(uttData, name);
+    }
 }
