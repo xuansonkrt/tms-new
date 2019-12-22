@@ -73,8 +73,8 @@
       </a>
       <div class="collapse" id="ui-basic3">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="#">Học phần</a></li>
-          <li class="nav-item"> <a class="nav-link" href="#">Lớp học phần</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/subject">Học phần</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/course">Lớp học phần</a></li>
         </ul>
       </div>
     </li>

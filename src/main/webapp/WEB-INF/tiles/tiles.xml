@@ -74,5 +74,23 @@
    </definition>
    <definition name="paperTypeForm" template="/WEB-INF/jsp/paperType/paperTypeForm.jsp" /> 
    <definition name="paperTypeList" template="/WEB-INF/jsp/paperType/paperTypeList.jsp" />
+   
+   <!-- Học phần -->
+   <definition name="subjectPage" extends="base.definition">  
+       <put-attribute name="title" value="Học phần" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/subject/subjectIndex.jsp" />  
+   </definition>
+   <definition name="subjectForm" template="/WEB-INF/jsp/subject/subjectForm.jsp" /> 
+   <definition name="subjectList" template="/WEB-INF/jsp/subject/subjectList.jsp" />
+   
+   <!-- Lớp học phần -->
+   <definition name="coursePage" extends="base.definition">  
+       <put-attribute name="title" value="Lớp học phần" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/course/courseIndex.jsp" />  
+   </definition>
+   <definition name="courseForm" template="/WEB-INF/jsp/course/courseForm.jsp" /> 
+   <definition name="courseList" template="/WEB-INF/jsp/course/courseList.jsp" />
+   
+   
    <definition name="updateAndClose" template="/WEB-INF/jsp/common/updateAndClose.jsp" /> 
 </tiles-definitions>

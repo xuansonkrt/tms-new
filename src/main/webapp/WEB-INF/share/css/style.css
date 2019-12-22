@@ -14273,3 +14273,6 @@ input[type="text"]:disabled {
 	border: 1px solid #ebedf2 !important;
     border-radius: 2px !important;
 }
+.select2-selection {
+	height: 30px !important;
+}
