@@ -14276,3 +14276,6 @@ input[type="text"]:disabled {
 .select2-selection {
 	height: 30px !important;
 }
+*:not(i),not(span){
+	font-family: Arial, Helvetica, sans-serif !important;
+}
