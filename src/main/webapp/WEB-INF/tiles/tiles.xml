@@ -92,6 +92,11 @@
    <definition name="courseForm" template="/WEB-INF/jsp/course/courseForm.jsp" /> 
    <definition name="courseList" template="/WEB-INF/jsp/course/courseList.jsp" />
    
+   <!-- Đơn vị -->
+   <definition name="organizationPage" extends="base.definition">  
+       <put-attribute name="title" value="Đơn vị" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/organization/organizationIndex.jsp" />  
+   </definition>
    
    <definition name="updateAndClose" template="/WEB-INF/jsp/common/updateAndClose.jsp" /> 
 </tiles-definitions>

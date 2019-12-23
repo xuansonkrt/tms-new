@@ -11,10 +11,10 @@
 <%@ attribute name="value" %>
 
 <style>
-thead {
+/* thead {
 	background-color: #fff !important;
 	color: #000 !important;
-}
+} */
 
 
 </style>

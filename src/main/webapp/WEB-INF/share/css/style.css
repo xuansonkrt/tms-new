@@ -14282,3 +14282,8 @@ input[type="text"]:disabled {
 .sidebar, .table thead th, .sidebar .nav .nav-item.active > .nav-link .menu-title {
 	font-family: Arial, Helvetica, sans-serif !important;
 }
+
+.datepicker thead{
+		background-color: #fff !important;
+		color: #000 !important;
+	}

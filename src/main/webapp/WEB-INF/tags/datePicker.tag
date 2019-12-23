@@ -10,10 +10,7 @@
 <%@ attribute name="value" %>
 
 <style>
-	.datepicker thead{
-		background-color: #fff !important;
-		color: #000 !important;
-	}
+	
 </style>
 <% if(StringUtils.isEmpty(id)){
     id=name;

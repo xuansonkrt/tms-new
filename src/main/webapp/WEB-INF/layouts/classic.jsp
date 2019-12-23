@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/toastr.min.css">
     <link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/dist/themes/default/style.min.css">
     <script language="JavaScript" type="text/javascript"  src="${pageContext.request.contextPath}/assets/js/jquery-3.4.1.min.js" ></script>
   </head>
   <body>
@@ -76,6 +77,7 @@
     <script language="JavaScript" type="text/javascript"  src="${pageContext.request.contextPath}/assets/js/bootstrap-datepicker.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"></script>
     <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+     <script language="JavaScript" type="text/javascript"  src="${pageContext.request.contextPath}/assets/dist/jstree.min.js" ></script>
     <script>
 	$(document).ready(function(){
 		$('#sonnx').on('click', function(){
