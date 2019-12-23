@@ -93,12 +93,13 @@ CREATE TABLE `course` (
   `term_id` bigint(20) DEFAULT NULL,
   `subject_id` bigint(20) DEFAULT NULL,
   `student_amount` int(11) DEFAULT NULL,
+  `education_level_id` bigint(20) DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
   `created_by` bigint(20) DEFAULT NULL,
   `modified_date` datetime DEFAULT NULL,
   `modified_by` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,6 +108,7 @@ CREATE TABLE `course` (
 
 LOCK TABLES `course` WRITE;
 /*!40000 ALTER TABLE `course` DISABLE KEYS */;
+INSERT INTO `course` VALUES (1,'345','34534',3,1,300,38,'2019-12-23 16:26:03',0,NULL,NULL),(2,'2312321','Lập trình nâng cao 1',4,3,100,39,'2019-12-23 16:45:00',0,NULL,NULL),(3,'111555','Lập trình nâng cao 2',4,3,111,39,'2019-12-23 16:46:32',0,'2019-12-23 16:48:36',0);
 /*!40000 ALTER TABLE `course` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -394,7 +396,7 @@ CREATE TABLE `subject` (
   `modified_date` datetime DEFAULT NULL,
   `modified_by` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -403,6 +405,7 @@ CREATE TABLE `subject` (
 
 LOCK TABLES `subject` WRITE;
 /*!40000 ALTER TABLE `subject` DISABLE KEYS */;
+INSERT INTO `subject` VALUES (1,'123','234','123123',38,NULL,123,1233,NULL,'2019-12-23 00:24:06',0,NULL,NULL),(3,'2313123','Lập trình nâng cao','                            ',39,NULL,3,90,NULL,'2019-12-23 16:20:25',0,NULL,NULL);
 /*!40000 ALTER TABLE `subject` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -457,7 +460,7 @@ CREATE TABLE `term` (
   `modified_date` datetime DEFAULT NULL,
   `modified_by` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -466,7 +469,7 @@ CREATE TABLE `term` (
 
 LOCK TABLES `term` WRITE;
 /*!40000 ALTER TABLE `term` DISABLE KEYS */;
-INSERT INTO `term` VALUES (3,'HK2','Học kỳ 2 update',2019,'2019-12-01','2019-12-31',1,'2019-12-21 22:57:19',0,'2019-12-21 22:58:23',0);
+INSERT INTO `term` VALUES (3,'HK2','Học kỳ 2 update',2019,'2019-12-01','2019-12-31',2,'2019-12-21 22:57:19',0,'2019-12-23 16:43:55',0),(4,'HK1','Học kỳ 1',2019,'2019-11-26','2019-12-24',1,'2019-12-23 16:44:17',0,'2019-12-23 16:44:24',0);
 /*!40000 ALTER TABLE `term` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -483,4 +486,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-22 17:05:24
+-- Dump completed on 2019-12-23 16:52:29
