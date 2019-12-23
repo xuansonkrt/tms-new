@@ -43,4 +43,8 @@ public class TermService {
     public DataTableResults<TermBean> searchData(TermForm form, HttpServletRequest req) {
         return termDAO.searchData(uttData, form, req);
     }
+    
+    public List<TermBean> getAllCombobox( ) {
+        return termDAO.getAllCombobox(uttData);
+    }
 }

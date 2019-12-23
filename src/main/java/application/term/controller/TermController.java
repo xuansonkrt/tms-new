@@ -43,7 +43,7 @@ public class TermController {
     
     @RequestMapping(value="/add", method=RequestMethod.GET)
     public String prepareAdd(HttpServletRequest req, Model model, CategoryForm form) {
-        req.setAttribute("term", new TermBO());
+        req.setAttribute("term", new TermForm());
         return TERM_FORM;
     }
     

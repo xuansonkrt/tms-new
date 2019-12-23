@@ -82,6 +82,7 @@
    </definition>
    <definition name="subjectForm" template="/WEB-INF/jsp/subject/subjectForm.jsp" /> 
    <definition name="subjectList" template="/WEB-INF/jsp/subject/subjectList.jsp" />
+   <definition name="subjectCombobox" template="/WEB-INF/jsp/subject/subjectCombobox.jsp" />
    
    <!-- Lớp học phần -->
    <definition name="coursePage" extends="base.definition">  

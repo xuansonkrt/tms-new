@@ -2,13 +2,18 @@ package application.course.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
 import application.common.UttData;
+import application.course.bean.CourseBean;
 import application.course.bo.CourseBO;
 import application.course.dao.CourseDAO;
+import application.course.form.CourseForm;
+import application.domain.DataTableResults;
 
 @Service
 public class CourseService {
@@ -36,5 +41,8 @@ public class CourseService {
         return courseDAO.findAll();
     }
     
+    public  DataTableResults<CourseBean> searchData(CourseForm form, HttpServletRequest req) {
+        return courseDAO.searchData(uttData, form, req);
+    }
     
 }

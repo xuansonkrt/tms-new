@@ -44,4 +44,12 @@ public class SubjectService {
     public DataTableResults<SubjectBean> searchData(SubjectForm form, HttpServletRequest req) {
         return subjectDAO.searchData(uttData, form, req);
     }
+    
+    public  List<SubjectBean> getAllOrderByNameAsc() {
+        return subjectDAO.getAllOrderByNameAsc(uttData);
+    }
+    
+    public List<SubjectBean> getAllByEducationLevelOrderByNameAsc(Long educationLevelId) {
+        return subjectDAO.getAllByEducationLevelOrderByNameAsc(uttData, educationLevelId);
+    }
 }

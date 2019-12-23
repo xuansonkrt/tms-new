@@ -26,6 +26,9 @@ public class CourseBO {
     @Column(name = "term_id")
     private Long termId;
     
+    @Column(name = "education_level_id")
+    private Long educationLevelId;
+    
     @Column(name = "subject_id")
     private Long subjectId;
     
@@ -145,4 +148,17 @@ public class CourseBO {
     }
 
 
+    
+    public Long getEducationLevelId() {
+        return educationLevelId;
+    }
+
+
+    
+    public void setEducationLevelId(Long educationLevelId) {
+        this.educationLevelId = educationLevelId;
+    }
+
+
+    
 }

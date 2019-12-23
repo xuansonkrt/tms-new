@@ -14279,3 +14279,6 @@ input[type="text"]:disabled {
 *:not(i),not(span){
 	font-family: Arial, Helvetica, sans-serif !important;
 }
+.sidebar, .table thead th {
+	font-family: Arial, Helvetica, sans-serif !important;
+}

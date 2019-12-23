@@ -6,12 +6,14 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
 
+import org.hibernate.SQLQuery;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import application.common.CommonUtil;
 import application.common.UttData;
 import application.domain.DataTableResults;
+import application.target.bean.TargetBean;
 import application.term.bean.TermBean;
 import application.term.bo.TermBO;
 import application.term.form.TermForm;
@@ -42,5 +44,18 @@ public interface TermDAO extends JpaRepository<TermBO, Long>{
 
         String orderBy = " ORDER BY c.the_order ASC ";
         return uttData.findPaginationQuery(nativeSQL + strCondition.toString(), orderBy, paramList, TermBean.class, Integer.MAX_VALUE);
+    }
+    
+    
+    public default List<TermBean> getAllCombobox(UttData uttData) {
+        String hql = "SELECT "
+                + " s.id as id"
+                + " ,concat(s.code,':',concat(s.year,'-',s.year+1)) as name" 
+                + " FROM term s "
+                + " WHERE 1 = 1  "
+                + " ORDER BY s.year DESC, s.the_order DESC ";
+        SQLQuery query = uttData.createSQLQuery(hql);
+        uttData.setResultTransformer(query, TermBean.class);
+        return query.list();
     }
 }
