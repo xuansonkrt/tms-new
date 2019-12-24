@@ -10,7 +10,7 @@
     </button>
 
     <ul class="navbar-nav navbar-nav-right">
-      <li class="nav-item dropdown">
+     <!--  <li class="nav-item dropdown">
         <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
           <i class="mdi mdi-email-outline"></i>
           <span class="count-symbol bg-warning"></span>
@@ -97,22 +97,22 @@
           <div class="dropdown-divider"></div>
           <h6 class="p-3 mb-0 text-center">See all notifications</h6>
         </div>
-      </li>
+      </li> -->
       <li class="nav-item nav-profile dropdown">
         <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
           <div class="nav-profile-img">
-            <img src="assets/images/faces/face1.jpg" alt="image">
+            <img src="<%= request.getSession().getAttribute("avatar") %>" alt="image">
             <span class="availability-status online"></span>
           </div>
           <div class="nav-profile-text">
-            <p class="mb-1 text-black">David Greymaax</p>
+            <p class="mb-1 text-black"><%= request.getSession().getAttribute("name") %></p>
           </div>
         </a>
         <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
           <a class="dropdown-item" href="#">
             <i class="mdi mdi-cached mr-2 text-success"></i> Activity Log </a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">
+          <a class="dropdown-item" href="/logout">
             <i class="mdi mdi-logout mr-2 text-primary"></i> Signout </a>
         </div>
       </li>

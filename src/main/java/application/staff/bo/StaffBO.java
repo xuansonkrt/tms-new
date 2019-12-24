@@ -10,8 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-@Entity
-@Table(name = "staff")
+@Entity(name = "staff")
 public class StaffBO {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)

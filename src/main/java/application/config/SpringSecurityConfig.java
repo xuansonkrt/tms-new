@@ -4,9 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -39,17 +37,17 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         logger.info("-----configure(HttpSecurity http)");
 
         http.authorizeRequests()
-                .antMatchers("/**").permitAll()
-                .antMatchers("/admin/**").hasAnyRole("ADMIN")
-                .antMatchers("/user/**").hasAnyRole("USER")
+                .antMatchers("/**").hasAnyRole("ADMIN","USER")
+                //.antMatchers("/admin/**").hasAnyRole("ADMIN")
+              //  .antMatchers("/user/**").hasAnyRole("USER")
                 .anyRequest().authenticated()
                 .and()
-                .formLogin().loginPage("/user/sign-in")
+                .formLogin().loginPage("/user/login")
                 .defaultSuccessUrl("/")
                 .permitAll().
                 and().rememberMe().rememberMeParameter("remember-me").key("uniqueAndSecret").tokenValiditySeconds(1296000).userDetailsService(userDetailsService)
                 .and()
-                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/")
+                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/user/login")
                 .deleteCookies("guid")
                 .deleteCookies("JSESSIONID")
                 .permitAll()
@@ -57,17 +55,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().accessDeniedHandler(accessDeniedHandler);
 
     }
-    @Override
-    @Bean
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
-    }
-    
-    @Bean
-    public UserDetailsService userDetailsService() {
-        return super.userDetailsService();
-    }
-    
+
     @Override
     public void configure(WebSecurity web) throws Exception {
         logger.info("-----configure(WebSecurity web)");

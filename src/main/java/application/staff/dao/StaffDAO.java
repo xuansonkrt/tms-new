@@ -4,14 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 import application.common.CommonUtil;
 import application.common.UttData;
 import application.domain.DataTableResults;
+import application.role.bo.StaffRoleBO;
 import application.staff.bean.StaffBean;
 import application.staff.bo.StaffBO;
 import application.staff.form.StaffForm;
@@ -52,4 +56,12 @@ public interface StaffDAO  extends JpaRepository<StaffBO, Long> {
         String orderBy = " ORDER BY s.id DESC ";
         return uttData.findPaginationQuery(nativeSQL + strCondition.toString(), orderBy, paramList, StaffBean.class, Integer.MAX_VALUE);
     }
+    
+    @Transactional(readOnly = true)
+    @Query("select u from staff_role u where u.staffId = :id")
+    Iterable<StaffRoleBO> findRolesOfUser(@Param("id") Long userId);
+    
+    @Transactional(readOnly = true)
+    @Query("select u from staff u where u.userName = :username")
+    Iterable<StaffBO> findByUsername(@Param("username") String userName);
 }

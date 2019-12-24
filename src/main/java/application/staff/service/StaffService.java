@@ -1,6 +1,8 @@
 package application.staff.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,6 +12,9 @@ import org.springframework.stereotype.Service;
 
 import application.common.UttData;
 import application.domain.DataTableResults;
+import application.role.RoleDAO.RoleDAO;
+import application.role.bo.RoleBO;
+import application.role.bo.StaffRoleBO;
 import application.staff.bean.StaffBean;
 import application.staff.bo.StaffBO;
 import application.staff.dao.StaffDAO;
@@ -22,6 +27,9 @@ public class StaffService {
     
     @Autowired
     private StaffDAO staffDAO;
+    
+    @Autowired
+    private RoleDAO roleDAO;
     
     public void saveOrUpdate(StaffBO entity) {
         staffDAO.save(entity);
@@ -43,5 +51,27 @@ public class StaffService {
     
     public DataTableResults<StaffBean> searchData(StaffForm form, HttpServletRequest req) {
         return staffDAO.searchData(uttData, form, req);
+    }
+    
+    public List<RoleBO> getActiveListRole(Long staffId) {
+        List<StaffRoleBO> listUserRoles = StreamSupport
+                .stream(staffDAO.findRolesOfUser(staffId).spliterator(), false).collect(Collectors.toList());
+
+        return getListRole().stream().filter(role -> {
+            return (listUserRoles.stream().filter(userRole -> userRole.getRoleId() == role.getId()).findFirst().orElse(null) != null);
+        }).collect(Collectors.toList());
+    }
+    
+    public List<RoleBO> getListRole() {
+        return StreamSupport
+                .stream(roleDAO.findAll().spliterator(), false)
+                .collect(Collectors.toList());
+
+    }
+    
+    public StaffBO findUserByUsername(String username) {
+        return StreamSupport
+                .stream(staffDAO.findByUsername(username).spliterator(), false)
+                .findFirst().orElse(null);
     }
 }
