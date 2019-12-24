@@ -25,6 +25,9 @@ public class OrganizationBO {
 
     @Column(name = "name")
     private String name;
+    
+    @Column(name = "note")
+    private String note;
 
     @Column(name = "phone_number")
     private String phoneNumber;
@@ -180,6 +183,16 @@ public class OrganizationBO {
 
     public void setModifiedBy(Long modifiedBy) {
         this.modifiedBy = modifiedBy;
+    }
+
+    
+    public String getNote() {
+        return note;
+    }
+
+    
+    public void setNote(String note) {
+        this.note = note;
     }
 
 }

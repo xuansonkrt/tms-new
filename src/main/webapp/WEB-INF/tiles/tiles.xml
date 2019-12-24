@@ -97,6 +97,10 @@
        <put-attribute name="title" value="Đơn vị" />  
        <put-attribute name="body" value="/WEB-INF/jsp/organization/organizationIndex.jsp" />  
    </definition>
+   <definition name="organizationForm" template="/WEB-INF/jsp/organization/organizationForm.jsp" /> 
+   <definition name="organizationList" template="/WEB-INF/jsp/organization/organizationList.jsp" />
+   <definition name="organizationPopup" template="/WEB-INF/jsp/organization/organizationPopup.jsp" />
+   <definition name="organizationPopupList" template="/WEB-INF/jsp/organization/organizationPopupList.jsp" />
    
    <definition name="updateAndClose" template="/WEB-INF/jsp/common/updateAndClose.jsp" /> 
 </tiles-definitions>

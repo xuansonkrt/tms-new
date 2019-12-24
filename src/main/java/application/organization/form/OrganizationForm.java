@@ -7,6 +7,7 @@ public class OrganizationForm {
     private Long id;
     private String code;
     private String name;
+    private String note;
     private String phoneNumber;
     private String email;
     private String address;
@@ -20,6 +21,29 @@ public class OrganizationForm {
     private Date modifiedDate;
     private Long modifiedBy;
     private String foundedDateShow;
+    private String parentName;
+    
+    
+    
+    public String getNote() {
+        return note;
+    }
+
+
+    
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+
+    public String getParentName() {
+        return parentName;
+    }
+
+    
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
+    }
 
     public String getFoundedDateShow() {
         return foundedDateShow;

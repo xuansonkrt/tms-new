@@ -14185,6 +14185,9 @@ body{
 .card-body-cus{
 	min-height: 30rem;
 }
+.card-body-cus-2{
+	min-height: 25rem;
+}
 .list-cat-type{
 	padding-top: 10px;
 }
