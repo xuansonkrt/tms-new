@@ -134,6 +134,8 @@ public class OrganizationController {
         Long id = CommonUtil.NVL(form.getId());
         OrganizationBO parent = new OrganizationBO();
         
+        //check trungg user name
+        
         if(CommonUtil.NVL(form.getParentId())>0L) {
             parent = organizationService.findById(form.getParentId());
             if(parent == null) {

@@ -70,5 +70,8 @@ public class Constants {
         String CDNG = "CDNG";
         String EDU_LEVEL = "EDU_LEVEL";
         String PAPER_LEVEL = "PAPER_LEVEL";
+        String HOC_HAM="HOC_HAM";
+        String HOC_VI="HOC_VI";
+        String CAP_BAC ="CAP_BAC";
     }
 }

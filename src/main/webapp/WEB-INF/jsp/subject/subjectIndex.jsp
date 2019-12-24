@@ -35,6 +35,11 @@
                                 </logic:notEmpty>
                             </select>
                         </div>
+                        <label class="control-label pr-0 col-md-3 col-sm-4 col-xs-12">Đơn vị</label>
+	                    <div class="col-md-3 col-sm-8 col-xs-12">
+	                        <tags:orgSelector id="organizationIdIdSearch" name="organizationId"/>
+	                    </div>
+                         
                     </div>
                 <div class="area-button">
                     <button class="btn btn-primary" onclick="actionSearch(); return false;">

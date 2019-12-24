@@ -36,13 +36,14 @@ public interface SubjectDAO extends JpaRepository<SubjectBO, Long>{
 
                 + " FROM subject s "
                 + " LEFT JOIN category c ON c.id = s.education_level_id"
-                + " LEFT JOIN organization o ON c.id = s.organization_id";
+                + " LEFT JOIN organization o ON o.id = s.organization_id";
 
         StringBuilder strCondition = new StringBuilder(" WHERE 1 = 1 ");
         
         CommonUtil.filter(form.getCode(), strCondition, paramList, "s.code");
         CommonUtil.filter(form.getName(), strCondition, paramList, "s.name");
         CommonUtil.filter(form.getEducationLevelId(), strCondition, paramList, " s.education_level_id");
+        CommonUtil.filter(form.getOrganizationId(), strCondition, paramList, " s.organization_id");
 
         String orderBy = " ORDER BY o.name ASC ";
         return uttData.findPaginationQuery(nativeSQL + strCondition.toString(), orderBy, paramList, SubjectBean.class, Integer.MAX_VALUE);

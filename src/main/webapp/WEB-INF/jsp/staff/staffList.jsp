@@ -15,7 +15,7 @@
 <logic:notEmpty name="resultList">
 <!--   pagesize="10" -->
     <display:table   class="table table-striped table-bordered" name="resultList" 
-            id="row"     requestURI="/subject/search">
+            id="row"     requestURI="/staff/search">
         <display:column title="STT" style="width: 30px; text-align: center;">
           <c:out value="${row_rowNum}"/>
         </display:column>
@@ -25,13 +25,25 @@
         <display:column title="Xóa"  class="pointer btnDel" style="width: 30px; text-align: center;">
           <i class="fa fa-trash" onclick="prepareDelete('${row.id}')"></i>
         </display:column>
-        <display:column property="code" title="Mã hình thức" autolink="true" />
-        <display:column property="name" title="Tên hình thức" />
-        <display:column property="educationLevelName" title="Cấp đào tạo"/>
-        <display:column property="organizationName" title="Đơn vị chịu trách nhiệm"/>
-        <display:column property="credit" title="Số tín chỉ" />
-        <display:column property="classPeriod" title="Số tiết" />
-        <display:column property="note" title="Ghi chú" />
+        <display:column property="code" title="Mã giáo viên" autolink="true" />
+        <display:column property="name" title="Tên giáo viên" />
+        <display:column property="userName" title="Tài khoản"/>
+        <display:column  title="Giới tính"> 
+        	<c:choose>
+              <c:when test="${ row.gender == 1}" >
+                  Nữ
+              </c:when>
+              <c:otherwise>
+                  Nam
+              </c:otherwise>
+            </c:choose>
+        </display:column>
+        <display:column property="dateOfBirthShow" title="Ngày sinh" style="text-align: center;"/>
+        <display:column property="organizationName" title="Đơn vị" />
+        <display:column property="academicLevelName" title="Học vị" />
+        <display:column property="academicTitleName" title="Học hàm" />
+        <display:column property="levelTitleName" title="CDNG" />
+        <display:column property="armyRankName" title="Cấp bậc" />
     </display:table>
 </logic:notEmpty>
 <logic:empty  name="resultList">

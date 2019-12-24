@@ -53,14 +53,7 @@
                         </div>
                         <label class="control-label pr-0 col-md-3 col-sm-4 col-xs-12 required">Đơn vị</label>
                         <div class="col-md-3 col-sm-8 col-xs-12">
-                           <%--  <select class="form-control select2" name="educationLevelId" id="educationLevelId" >
-                                <option value="">--- Chọn tất cả ---</option>
-                                <logic:notEmpty name="lstEducationLevel">
-                                    <c:forEach items="${lstEducationLevel}" var="cat" varStatus="loop">
-                                        <option value="${cat.id}"   ${cat.id == subject.educationLevelId ? 'selected="selected"' : ''}>${cat.name}</option>
-                                    </c:forEach>
-                                </logic:notEmpty>
-                            </select> --%>
+                            <tags:orgSelector id="organizationIdIdSave" name="organizationId" value="${subject.organizationId}"/>
                         </div>
                     </div>
                     <div class="row form-group">

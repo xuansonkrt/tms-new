@@ -25,12 +25,12 @@
 
 <div class="form-group">
 	<div class='input-group date' id=''>
-		<input type='text'  id="<%=id+"_parentName"%>" class="form-control" readonly="readonly"/> 
+		<input type='text'  id="<%=id+"_parentName"%>" class="form-control" readonly="readonly"  onclick="showPopup();"/> 
 		<input type='hidden' name="<%=name%>" value="<%=value%>" id="<%=id%>" class="form-control" /> 
 		<span class="input-group-addon" onclick="showPopup();"> 
 			<span class="fa fa-search btnEdit"></span>
 		</span>
-		<span class="input-group-addon" onclick="showPopup();"> 
+		<span class="input-group-addon" onclick="clearValue();"> 
 			<span class="fa fa-close btnDel"></span>
 		</span>
 	</div>
@@ -49,9 +49,16 @@ function selectOrg(id, name){
 	$('#<%=id+"_parentName"%>').val(name);
 	$('#myModalOrgSelecter').modal('hide');
 }
-
+function clearValue(){
+	$('#<%=id%>').val(0);
+	$('#<%=id+"_parentName"%>').val('');
+}
 $(document).ready(function(){
 	var id =$('#<%=id%>').val();
+	if(id == 'null' ){
+		$('#<%=id%>').val(0);
+		id=0;
+	}
 	if(id){
 		$.ajax({
 	           url: "/organization/info/"+id,

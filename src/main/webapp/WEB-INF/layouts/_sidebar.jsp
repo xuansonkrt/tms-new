@@ -79,7 +79,7 @@
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">
+      <a class="nav-link" href="/staff">
         <span class="menu-title">Quản lý giáo viên</span>
         <i class="mdi mdi-face menu-icon"></i>
         

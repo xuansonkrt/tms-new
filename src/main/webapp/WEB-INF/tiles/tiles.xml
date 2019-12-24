@@ -102,5 +102,13 @@
    <definition name="organizationPopup" template="/WEB-INF/jsp/organization/organizationPopup.jsp" />
    <definition name="organizationPopupList" template="/WEB-INF/jsp/organization/organizationPopupList.jsp" />
    
+   <!-- Giáo viên -->
+   <definition name="staffPage" extends="base.definition">  
+       <put-attribute name="title" value="Quản lý giáo viên" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/staff/staffIndex.jsp" />  
+   </definition>
+   <definition name="staffForm" template="/WEB-INF/jsp/staff/staffForm.jsp" /> 
+   <definition name="staffList" template="/WEB-INF/jsp/staff/staffList.jsp" />
+   
    <definition name="updateAndClose" template="/WEB-INF/jsp/common/updateAndClose.jsp" /> 
 </tiles-definitions>

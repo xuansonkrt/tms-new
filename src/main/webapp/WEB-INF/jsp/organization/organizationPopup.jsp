@@ -16,8 +16,7 @@
                 <h5 class="modal-title">
                     <i class="fa fa-th"></i> Chọn đơn vị
                 </h5>
-                <button type="button" class="close" data-dismiss="modal"
-                    aria-label="Close">
+                <button type="button" class="close" onclick="$('#myModalOrgSelecter').modal('hide'); return false;" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -67,7 +66,7 @@
                 <label class="title-card"><i class="fa fa-list pr-1"></i><span id="label-org-list-popup"> Danh sách đơn vị</span></label>
                
             </div>
-            <div class="card-body" id="resultListAreaPopup" style="max-height:350px; overflow-y : auto;">
+            <div class="card-body" id="resultListAreaPopup" style="max-height:250px; overflow-y : auto;">
                 <%-- <jsp:include page="categoryList.jsp"></jsp:include> --%>
             </div>
         </div>

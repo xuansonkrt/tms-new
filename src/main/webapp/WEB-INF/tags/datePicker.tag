@@ -19,7 +19,7 @@
 
 <div class="container">
     <div class="row">
-        <div>
+        <div style="width: 100%">
             <div class="form-group">
                 <div class='input-group date' id=''>
                     <input type='text' name="<%=name%>" value="<%=value%>" id="<%=id%>"  class="form-control" />
