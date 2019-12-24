@@ -168,9 +168,11 @@
 		            </div>
             	</div>
             	<div class="col-6">
-            		<div class="col-5 col-md-5 col-sm-12 col-xs-12">
+            	 <div class="row form-group">
+            	 	<label class="control-label pr-0 col-md-4 ">Avartar</label>
+            		<div class="col-4 col-md-4 col-sm-12 col-xs-12">
 	                    <div style="text-align: center">
-	                        <img  style="max-width: 300px" src="${staff.avatar}" class="user-avatar">
+	                        <img  style="max-width: 250px" src="${staff.avatar}" class="user-avatar">
 	                    </div>
 	                    
 	
@@ -179,6 +181,7 @@
 	                    </div>
 	                    <input type="text" id="avatar" name="avatar"  value="${staff.avatar}" style="display: none">
 	
+	                </div>
 	                </div>
             	</div>
                 
