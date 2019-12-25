@@ -22,6 +22,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.beanutils.BeanUtilsBean;
 import org.apache.commons.beanutils.ConvertUtilsBean;
@@ -1018,6 +1019,11 @@ public class CommonUtil {
          * }
          * }
          */
+        HttpSession session = req.getSession();
+        Long id =(Long) session.getAttribute("userId");
+        if(id!=null) {
+            return id;
+        }
         return 0L;
     }
     /**

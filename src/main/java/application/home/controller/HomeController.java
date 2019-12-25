@@ -30,6 +30,7 @@ public class HomeController {
         HttpSession session = req.getSession();
         session.setAttribute("name", bo.getName());
         session.setAttribute("avatar", bo.getAvatar());
+        session.setAttribute("userId", bo.getId());
         return HOME_PAGE;
     }
     
