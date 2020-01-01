@@ -50,7 +50,7 @@ public class StaffRoleBO {
     }
 
 
-    public StaffRole(Long id, Long staffId, Long roleId) {
+    public StaffRoleBO(Long id, Long staffId, Long roleId) {
         super();
         this.id = id;
         this.staffId = staffId;
@@ -58,7 +58,7 @@ public class StaffRoleBO {
     }
 
 
-    public StaffRole() {
+    public StaffRoleBO() {
         super();
     }
     

@@ -110,6 +110,20 @@
    <definition name="staffForm" template="/WEB-INF/jsp/staff/staffForm.jsp" /> 
    <definition name="staffList" template="/WEB-INF/jsp/staff/staffList.jsp" />
    
+   <!-- Tải đào tạo -->
+   <definition name="carriageDTPage" extends="base.definition">  
+       <put-attribute name="title" value="Quản lý tải đào tạo của GV" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/carriageDT/carriageDT.jsp" />  
+   </definition>
+
+   
+   <!-- Tải nghiên cứu -->
+   <definition name="carriageNCPage" extends="base.definition">  
+       <put-attribute name="title" value="Quản lý tải nghiên cứu giáo viên" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/carriageNC/carriageNC.jsp" />  
+   </definition>
+
+   
    <definition name="updateAndClose" template="/WEB-INF/jsp/common/updateAndClose.jsp" /> 
    
    <definition name="loginPage" template="/WEB-INF/layouts/login.jsp" /> 

@@ -27,10 +27,12 @@ public class HomeController {
     public String home(HttpServletRequest req, Model model) {
         String  username = SecurityContextHolder.getContext().getAuthentication().getName();
         StaffBO bo = staffService.findUserByUsername(username);
-        HttpSession session = req.getSession();
-        session.setAttribute("name", bo.getName());
-        session.setAttribute("avatar", bo.getAvatar());
-        session.setAttribute("userId", bo.getId());
+        if(bo != null) {
+        	HttpSession session = req.getSession();
+            session.setAttribute("name", bo.getName());
+            session.setAttribute("avatar", bo.getAvatar());
+            session.setAttribute("userId", bo.getId());
+        }
         return HOME_PAGE;
     }
     
