@@ -14,6 +14,11 @@ import application.domain.DataTableResults;
 @Controller
 @RequestMapping(path = "/tai-nc")
 public class taiNCController {
-	
+    private static String CARRIAGE_RESEARCH="carriageNCPage";
+    
+    @RequestMapping("/list")
+    public String login(HttpServletRequest req, Model model) {
+        return CARRIAGE_RESEARCH;
+    }
 	
 }
