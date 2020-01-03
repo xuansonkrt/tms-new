@@ -121,19 +121,19 @@ function reloadTree(){
 }
 
 function validateBeforeSave(){
-	if($('#formSave #code').val()==''){
+	if($('#formSave>#code').val()==''){
 		showError('Chưa nhập mã đơn vị!');
 		$('#formSave #code').focus();
 		return false;
 	}
 	
-	if($('#formSave #name').val()==''){
+	if($('#formSave>#name').val()==''){
 		showError('Chưa nhập tên đơn vị!');
 		$('#formSave #name').focus();
 		return false;
 	}
 	
-	if($('#formSave #foundedDateShow').val()==''){
+	if($('#formSave>#foundedDateShow').val()==''){
 		showError('Chưa nhập ngày thành lập!');
 		$('#formSave #foundedDateShow').focus();
 		return false;
