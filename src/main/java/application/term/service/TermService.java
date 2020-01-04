@@ -1,5 +1,7 @@
 package application.term.service;
 
+
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -46,5 +48,9 @@ public class TermService {
     
     public List<TermBean> getAllCombobox( ) {
         return termDAO.getAllCombobox(uttData);
+    }
+    
+    public List<TermBean> getTermByDate( Date dateSearch) {
+        return termDAO.getTermByDate(uttData, dateSearch);
     }
 }

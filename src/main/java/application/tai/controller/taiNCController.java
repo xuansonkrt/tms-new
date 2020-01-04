@@ -15,5 +15,10 @@ import application.domain.DataTableResults;
 @RequestMapping(path = "/tai-nc")
 public class taiNCController {
 	
-	
+    private static String RESEARCH_PAGE ="researchPage";
+    
+    @RequestMapping
+    public String researchPage(HttpServletRequest req, Model model) {
+        return RESEARCH_PAGE;
+    }
 }

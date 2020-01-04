@@ -1,6 +1,8 @@
 package application.term.dao;
 
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +15,6 @@ import org.springframework.stereotype.Repository;
 import application.common.CommonUtil;
 import application.common.UttData;
 import application.domain.DataTableResults;
-import application.target.bean.TargetBean;
 import application.term.bean.TermBean;
 import application.term.bo.TermBO;
 import application.term.form.TermForm;
@@ -55,6 +56,18 @@ public interface TermDAO extends JpaRepository<TermBO, Long>{
                 + " WHERE 1 = 1  "
                 + " ORDER BY s.year DESC, s.the_order DESC ";
         SQLQuery query = uttData.createSQLQuery(hql);
+        uttData.setResultTransformer(query, TermBean.class);
+        return query.list();
+    }
+    
+    public default List<TermBean> getTermByDate(UttData uttData, Date dateSearch) {
+        String hql = " SELECT id as id, "
+                + " year as year, "
+                + " the_order as theOrder  "
+                + " FROM term t "
+                + " WHERE t.begin_date<= :dateSearch AND t.END_date>= :dateSearch ";
+        SQLQuery query = uttData.createSQLQuery(hql);
+        query.setParameter("dateSearch", dateSearch);
         uttData.setResultTransformer(query, TermBean.class);
         return query.list();
     }
