@@ -6,11 +6,64 @@
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags"%>
 <%@ taglib uri="http://displaytag.sf.net" prefix="display"%>
 
+<style>
+	.title-sonnx{
+		margin-bottom: 0px;
+		margin-top: 15px;
+		font-family: Arial, Helvetica, sans-serif !important;
+	}
+</style>
+
 <div class="">
     <div id="staffInfoArea">
          <jsp:include page="staffInfo.jsp"></jsp:include>
     </div>
-
+	
+	<h5 class="title-sonnx"><strong>I. Tải đào tạo</strong></h5>
+	<div class="card mt-3">
+	     <div class="card-header">
+	          <label class="title-card"><i class="fa fa-list pr-1"></i>Tải giảng dạy</label>
+	          <div style="float: right;">
+	               <button class="btn btn-primary" id="btn-add-cat-type" onclick="addStaffCode()">
+	                    <i class="fa fa-plus pr-1"></i>Thêm mới
+	               </button>
+	          </div>
+	     </div>
+	     
+	     <div class="card-body"style="max-height: 350px;">
+	          <form id="formSearch" name="formSearch" class="form-horizontal">
+	          <input type="hidden" name="id" class="form-control" id="staffId" placeholder="" value="${staffPaper.staffId}">
+	          	<div class="row form-group">
+	               <label class="control-label pr-0 col-md-2 col-sm-4 col-xs-12">Học kỳ</label>
+	               <div class="col-md-3 col-sm-8 col-xs-12">
+	                    <select class="form-control select2" id="term1" name="term1">
+	                    	<option value="" selected="selected">Cả năm</option>
+			                 <option value="1">Học kỳ 1</option>
+			                 <option value="2">Học kỳ 2</option>
+			            </select>
+	               </div>
+	               <label class="control-label pr-0 col-md-3 col-sm-4 col-xs-12">Năm học</label>
+	               <div class="col-md-3 col-sm-8 col-xs-12">
+	                   <select class="form-control select2" id="year1" name="year1">
+			                 <option value="2020" >2020-2021</option>
+			                 <option value="2019" selected="selected">2019-2020</option>
+			                 <option value="2018">2018-2019</option>
+			                 <option value="2017">2017-2018</option>
+			                 <option value="2016">2016-2017</option>
+			                 <option value="2015">2015-2016</option>
+			            </select>
+	               </div>
+	          </div>
+	          </form>
+	          
+	          <div id="staffCourseArea">
+			       
+			  </div>
+	     </div>
+	</div>
+	
+	
+	<h5 class="title-sonnx"><strong>II. Tải nghiên cứu khoa học</strong></h5>
 	<div class="card mt-3">
 	     <div class="card-header">
 	          <label class="title-card"><i class="fa fa-list pr-1"></i>Bài báo khoa học</label>
@@ -20,7 +73,8 @@
 	               </button>
 	          </div>
 	     </div>
-	     <div class="card-body"style="max-height: 350px; overflow-y: auto;">
+	     
+	     <div class="card-body"style="max-height: 350px; ">
 	          <form id="formSearch" name="formSearch" class="form-horizontal">
 	          <input type="hidden" name="id" class="form-control" id="staffId" placeholder="" value="${staffPaper.staffId}">
 	          	<div class="row form-group">
@@ -35,8 +89,8 @@
 	               <label class="control-label pr-0 col-md-3 col-sm-4 col-xs-12">Năm học</label>
 	               <div class="col-md-3 col-sm-8 col-xs-12">
 	                   <select class="form-control select2" id="year" name="year">
-			                 <option value="2020" selected="selected">2020-2021</option>
-			                 <option value="2019">2019-2020</option>
+			                 <option value="2020" >2020-2021</option>
+			                 <option value="2019" selected="selected">2019-2020</option>
 			                 <option value="2018">2018-2019</option>
 			                 <option value="2017">2017-2018</option>
 			                 <option value="2016">2016-2017</option>
@@ -99,6 +153,7 @@ function validateBeforeSave(){
         var areaId ="staffInfoArea";
         var url="/research/staff/"+$('#cbStaff').val();
         ajaxUpdate("GET",areaId,url,null,null);
+        console.log('chaneg')
     }
     
     function loadStaffPaper(){
@@ -111,6 +166,16 @@ function validateBeforeSave(){
     function add(){
         var areaId ="myModal";
         var url="/research/staff-paper/add/"+$('#cbStaff').val();
+        ajaxUpdate("GET",areaId,url,null, function(){
+            $('#myModal').modal('show');
+            $('#formSave>#staffId').val( $('#cbStaff').val());
+        });
+    }
+    
+    
+    function addStaffCode(){
+        var areaId ="myModal";
+        var url="/research/staff-course/add/"+$('#cbStaff').val();
         ajaxUpdate("GET",areaId,url,null, function(){
             $('#myModal').modal('show');
             $('#formSave>#staffId').val( $('#cbStaff').val());
@@ -159,7 +224,7 @@ function validateBeforeSave(){
     	$('.select2').select2();
         actionSearch();
         
-        $('#staffId').change(function(event){
+        $('#cbStaff').change(function(event){
 			loadStaffInfo();
 		})
 		 $('#term').change(function(event){
