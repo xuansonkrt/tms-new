@@ -103,6 +103,8 @@
     <script>
     	$(document).ready(function(){
     		$('.select2').select2();
+    		//checkbox and radios
+    	    $(".form-check label,.form-radio label").append('<i class="input-helper"></i>');
     		
     		$('#cbStaff').change(function(event){
     			loadStaffInfo();
