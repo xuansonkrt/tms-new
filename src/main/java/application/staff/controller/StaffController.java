@@ -19,6 +19,8 @@ import application.category.service.CategoryTypeService;
 import application.common.CommonUtil;
 import application.common.Constants;
 import application.domain.DataTableResults;
+import application.role.bo.StaffRoleBO;
+import application.role.service.StaffRoleService;
 import application.staff.bean.StaffBean;
 import application.staff.bo.StaffBO;
 import application.staff.form.StaffForm;
@@ -36,6 +38,8 @@ public class StaffController {
     @Autowired
     private CategoryService categoryService;
     
+    @Autowired
+    private StaffRoleService staffRoleService;
     @Autowired
     private PasswordEncoder passwordEncoder;
     
@@ -95,6 +99,7 @@ public class StaffController {
     @RequestMapping(method=RequestMethod.POST)
     public String actionSave(HttpServletRequest req, Model model, StaffForm form) throws Exception {
         Long id = CommonUtil.NVL(form.getId());
+        boolean isNew = false;
         //check trungg user name
         StaffBO bo;
         if(id>0L) {
@@ -107,6 +112,7 @@ public class StaffController {
             bo.setCreatedBy(CommonUtil.getUserId(req));
             bo.setCreatedDate(new Date());
             bo.setPasswordHash(passwordEncoder.encode(form.getPassword()));
+            isNew = true;
         }
         bo.setUserName(form.getUserName());
         bo.setCode(form.getCode());
@@ -129,6 +135,13 @@ public class StaffController {
         }
         staffService.saveOrUpdate(bo);
         
+        
+        if(isNew) {
+            StaffRoleBO staffRoleBO = new StaffRoleBO();
+            staffRoleBO.setStaffId(bo.getId());
+            staffRoleBO.setRoleId(2L);
+            staffRoleService.saveOrUpdate(staffRoleBO);
+        }
         req.setAttribute("status", Constants.RESPONSE_CODE.SUCCESS);
         req.setAttribute("callback", "afterSave");
         return Constants.RESPONSE_PAGE.UPDATE_AND_CLOSE;

@@ -143,4 +143,5 @@
    <definition name="updateAndClose" template="/WEB-INF/jsp/common/updateAndClose.jsp" /> 
    
    <definition name="loginPage" template="/WEB-INF/layouts/login.jsp" /> 
+   <definition name="changePasswordPage" template="/WEB-INF/layouts/changePassword.jsp" /> 
 </tiles-definitions>

@@ -9,7 +9,7 @@
       <span class="mdi mdi-menu"></span>
     </button>
 
-    <ul class="navbar-nav navbar-nav-right">
+    <ul class="navbar-nav navbar-nav-right font-sonnx">
      <!--  <li class="nav-item dropdown">
         <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
           <i class="mdi mdi-email-outline"></i>
@@ -109,11 +109,11 @@
           </div>
         </a>
         <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-          <a class="dropdown-item" href="#">
-            <i class="mdi mdi-cached mr-2 text-success"></i> Activity Log </a>
+          <a class="dropdown-item" href="/user/change-password">
+            <i class="mdi mdi-cached mr-2 text-success"></i> Đổi mật khẩu </a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="/logout">
-            <i class="mdi mdi-logout mr-2 text-primary"></i> Signout </a>
+            <i class="mdi mdi-logout mr-2 text-primary"></i> Đăng xuất </a>
         </div>
       </li>
     </ul>

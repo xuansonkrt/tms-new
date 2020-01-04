@@ -33,18 +33,19 @@ public class HomeController {
             session.setAttribute("avatar", bo.getAvatar());
             session.setAttribute("userId", bo.getId());
         }
-        return HOME_PAGE;
+        /* return HOME_PAGE; */
+        return "redirect:/dashboard";
     }
     
     @RequestMapping("/dashboard")
     public String dashboard(HttpServletRequest req, Model model) {
-        req.setAttribute("schoolName", "Học viện Kỹ thuật Quân sự");
+        req.setAttribute("schoolName", "HỌC VIỆN KỸ THUẬT QUÂN SỰ");
         return DASHBOARD_PAGE;
     }
     
     @RequestMapping("/demo")
     public String demo(HttpServletRequest req, Model model) {
-        req.setAttribute("schoolName", "Học viện Kỹ thuật Quân sự");
+        req.setAttribute("schoolName", "HỌC VIỆN KỸ THUẬT QUÂN SỰ");
         return DASHBOARD_VIEW;
     }
 }
