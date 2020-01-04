@@ -85,7 +85,7 @@
         
       </a>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#ui-basic1" aria-expanded="false" aria-controls="ui-basic1">
         <span class="menu-title">Báo cáo cá nhân</span>
         <i class="menu-arrow"></i>
@@ -97,6 +97,12 @@
           <li class="nav-item"> <a class="nav-link" href="/research">Tải nghiên cứu khoa học</a></li>
         </ul>
       </div>
+    </li> -->
+     <li class="nav-item">
+      <a class="nav-link" href="/research">
+        <span class="menu-title">Báo cáo cá nhân</span>
+        <i class="mdi mdi-message-bulleted menu-icon"></i>
+      </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="/bao-cao">
