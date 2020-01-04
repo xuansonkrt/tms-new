@@ -210,6 +210,7 @@ function validateBeforeSave(){
         var areaId ="staffPaperArea";
         var url="/research/staff-paper"
         var data = getFormData('formSearch');
+        data['staffId'] =$('#cbStaff').val();
         ajaxUpdate("GET",areaId,url,data,null);
         
     }
@@ -218,6 +219,7 @@ function validateBeforeSave(){
         var areaId ="staffCourseArea";
         var url="/research/staff-course"
         var data = getFormData('formSearch3');
+        data['staffId'] =$('#cbStaff').val();
         ajaxUpdate("GET",areaId,url,data,null);
         
     }
@@ -268,6 +270,8 @@ function validateBeforeSave(){
         
         $('#cbStaff').change(function(event){
 			loadStaffInfo();
+			actionSearch();
+			actionSearchCourse();
 		})
 		 $('#term').change(function(event){
 			 actionSearch();
