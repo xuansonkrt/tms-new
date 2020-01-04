@@ -33,7 +33,7 @@
             <div class="card-body">
                 <form id="formSearch" name ="formSearch" class="form-horizontal">
                     <input type="hidden" name="parentId" class="form-control" id="parentId">
-                    <!-- <div class="row form-group">
+                    <div class="row form-group">
                         <label class="control-label pr-0 col-md-2 col-sm-4 col-xs-12">Mã đơn vị</label>
                         <div class="col-md-3 col-sm-8 col-xs-12">
                             <input type="text" name="code" class="form-control" id="code"  >
@@ -42,7 +42,7 @@
                         <div class="col-md-3 col-sm-8 col-xs-12">
                             <input type="text" name="name" class="form-control" id="name">
                         </div>
-                    </div> -->
+                    </div>
                     
                     <div class="area-button">
                          <button class="btn btn-primary" onclick="actionSearch(); return false;">

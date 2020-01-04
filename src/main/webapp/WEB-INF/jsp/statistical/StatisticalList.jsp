@@ -17,7 +17,7 @@
 <table class="table table-striped table-bordered" style="width:100%">
 <thead>
   <tr>
-    <th rowspan="2">Đơn vị</th>
+    <th rowspan="2" style="vertical-align: middle;">Đơn vị</th>
     <th colspan="3">Tải đào tạo</th>
 	<th colspan="3">Tải NCKH</th>
   </tr>
