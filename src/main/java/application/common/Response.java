@@ -7,7 +7,20 @@ public class Response {
     private String type;
     private String code;
     private String message;
+    private boolean isSuccess;
+
     
+    
+    
+    public boolean isSuccess() {
+        return isSuccess;
+    }
+
+    
+    public void setSuccess(boolean isSuccess) {
+        this.isSuccess = isSuccess;
+    }
+
     public String getStatus() {
         return status;
     }

@@ -122,7 +122,13 @@
        <put-attribute name="title" value="Quản lý tải nghiên cứu giáo viên" />  
        <put-attribute name="body" value="/WEB-INF/jsp/carriageNC/carriageNC.jsp" />  
    </definition>
-
+	<definition name="researchPage" extends="base.definition">  
+       <put-attribute name="title" value="Quản lý tải nghiên cứu giáo viên" />  
+       <put-attribute name="body" value="/WEB-INF/jsp/research/researchIndex.jsp" />  
+   </definition>
+   <definition name="staffInfo" template="/WEB-INF/jsp/research/staffInfo.jsp" />
+   <definition name="staffPaperList" template="/WEB-INF/jsp/research/staffPaperList.jsp" />
+   <definition name="staffPaperForm" template="/WEB-INF/jsp/research/staffPaperForm.jsp" />
    
    <definition name="updateAndClose" template="/WEB-INF/jsp/common/updateAndClose.jsp" /> 
    

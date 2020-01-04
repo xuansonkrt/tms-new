@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
+import application.common.CommonUtil;
 import application.common.UttData;
 import application.domain.DataTableResults;
 import application.role.RoleDAO.RoleDAO;
@@ -73,5 +74,18 @@ public class StaffService {
         return StreamSupport
                 .stream(staffDAO.findByUsername(username).spliterator(), false)
                 .findFirst().orElse(null);
+    }
+    
+    public List<StaffBean> getStaffOrg(Long id) {
+        return staffDAO.getStaffOrg(uttData, id);
+    }
+    
+    public StaffBean staffInfo(Long id) {
+        List<StaffBean> lst =staffDAO.getStaff(uttData, id);
+        if(CommonUtil.isNullOrEmpty(lst)) {
+            return null;
+        } else {
+            return lst.get(0);
+        }
     }
 }

@@ -94,7 +94,7 @@
       <div class="collapse" id="ui-basic1">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" href="/tai-dt/list">Tải đào tạo</a></li>
-          <li class="nav-item"> <a class="nav-link" href="/tai-nc/list">Tải nghiên cứu khoa học</a></li>
+          <li class="nav-item"> <a class="nav-link" href="/research">Tải nghiên cứu khoa học</a></li>
         </ul>
       </div>
     </li>
