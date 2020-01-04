@@ -28,6 +28,7 @@ import application.subject.form.SubjectForm;
 import application.tai.bean.StaffPaperBean;
 import application.tai.bo.StaffPaperBO;
 import application.tai.form.StaffPaperForm;
+import application.tai.service.StaffCourseService;
 import application.tai.service.StaffPaperService;
 import application.term.bean.TermBean;
 import application.term.bo.TermBO;
@@ -47,6 +48,9 @@ public class ResearchController {
     
     
     @Autowired
+    private StaffCourseService staffCourseService;
+    
+    @Autowired
     private PaperTypeService paperTypeService;
     
     
@@ -54,6 +58,8 @@ public class ResearchController {
     private static String STAFF_INFO ="staffInfo";
     private static String STAFF_PAPER_LIST ="staffPaperList";
     private static String STAFF_PAPER_FORM ="staffPaperForm";
+    private static String STAFF_COURSE_FORM ="staffCourseForm";
+    
     
     @RequestMapping
     public String researchPage(HttpServletRequest req, Model model) {
@@ -97,6 +103,18 @@ public class ResearchController {
         return STAFF_PAPER_FORM;
     }
     
+    
+    @RequestMapping(value="/staff-course/add/{id}", method=RequestMethod.GET)
+    public String prepareAddStaffCourse(HttpServletRequest req, Model model, StaffForm form, @PathVariable("id") Long id) {
+        StaffPaperForm staffPaperForm = new StaffPaperForm();
+        staffPaperForm.setStaffId(id);
+        
+        List<PaperTypeBO> lstPaperType = paperTypeService.findAll();
+        
+        req.setAttribute("staffPaper", staffPaperForm);
+        req.setAttribute("lstPaperType", lstPaperType);
+        return STAFF_COURSE_FORM;
+    }
     
     @RequestMapping(value="/staff-paper/{id}", method=RequestMethod.GET)
     public String prepareUpdate(HttpServletRequest req, Model model, @PathVariable("id") Long id) throws Exception {

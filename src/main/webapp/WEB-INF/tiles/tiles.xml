@@ -129,6 +129,7 @@
    <definition name="staffInfo" template="/WEB-INF/jsp/research/staffInfo.jsp" />
    <definition name="staffPaperList" template="/WEB-INF/jsp/research/staffPaperList.jsp" />
    <definition name="staffPaperForm" template="/WEB-INF/jsp/research/staffPaperForm.jsp" />
+   <definition name="staffCourseForm" template="/WEB-INF/jsp/research/staffCourseForm.jsp" />
    
    <definition name="updateAndClose" template="/WEB-INF/jsp/common/updateAndClose.jsp" /> 
    

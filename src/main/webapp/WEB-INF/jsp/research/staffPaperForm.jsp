@@ -29,8 +29,8 @@
             <div class="modal-body">
                  <div class="form-group">
                      <input type="hidden" name="id" class="form-control" id="id" placeholder="" value="${staffPaper.id}">
-                     <input type="hidden" name="id" class="form-control" id="staffId" placeholder="" value="${staffPaper.staffId}">
-                     <input type="hidden" name="id" class="form-control" id="organizationId" placeholder="" value="${staffPaper.organizationId}">
+                     <input type="hidden" name="staffId" class="form-control" id="staffId" placeholder="" value="${staffPaper.staffId}">
+                     <input type="hidden" name="organizationId" class="form-control" id="organizationId" placeholder="" value="${staffPaper.organizationId}">
                     <div class="row form-group">
                         <label class="control-label pr-0 col-md-2 col-sm-4 col-xs-12 required">Hình thức viết báo</label>
                         <div class="col-md-3 col-sm-8 col-xs-12">
@@ -106,7 +106,7 @@
 		if(numAuthor == '' || point==0){
 			return;
 		}
-		var a = Math.round(point/numAuthor * 100) / 100;
+		var a = Math.round((point/numAuthor) * 100) / 100;
 		$('#researchPoint').val(a);
 	}
 	$(document).ready(function(){
@@ -133,5 +133,12 @@
 			}
 			setPoint();
 		})
+		
+		for(var i=0; i<array.length; i++){
+			if(array[i].id==$('#paperTypeId').val()){
+				$('#notePoint').text(array[i].note);
+				point = array[i].point;
+			}
+		}
 	})
 </script>
