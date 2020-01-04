@@ -1,5 +1,6 @@
 package application.tai.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,17 +8,21 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import application.common.CommonUtil;
 import application.domain.DataTableResults;
 import application.organization.bean.OrganizationBean;
+import application.organization.bean.TreeBean;
 import application.organization.form.OrganizationForm;
+import application.organization.service.OrganizationService;
 import application.paperType.service.PaperTypeService;
 import application.staff.bean.StaffBean;
 import application.staff.bo.StaffBO;
 import application.staff.service.StaffService;
+import application.tai.bean.taiTKBean;
 import application.tai.form.taiDTForm;
 import application.tai.service.StaffPaperService;
 import application.term.service.TermService;
@@ -36,7 +41,7 @@ public class taiDTController {
     
     
     @Autowired
-    private PaperTypeService paperTypeService;
+    private OrganizationService organizationService;
     
     private static String CARRIAGE="statisticalPage";
     private static String CARRIAGE_LIST="statisticalList";
@@ -48,8 +53,9 @@ public class taiDTController {
     
     @RequestMapping(value="/search", method=RequestMethod.GET)
     public String search(HttpServletRequest req, Model model, taiDTForm form) {
-        DataTableResults<StaffBean>  lstTerm= staffService.searchDataStatistical(form, req);
-        req.setAttribute("resultList", lstTerm.getData());
+        List<taiTKBean>  lstTerm= staffService.getStaffCarriagebyListOrg(form.getParentId());
+        
+        req.setAttribute("resultList",lstTerm);
         return CARRIAGE_LIST;
     }
     

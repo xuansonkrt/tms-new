@@ -20,6 +20,7 @@ import application.staff.bean.StaffBean;
 import application.staff.bo.StaffBO;
 import application.staff.dao.StaffDAO;
 import application.staff.form.StaffForm;
+import application.tai.bean.taiTKBean;
 
 @Service
 public class StaffService {
@@ -88,4 +89,9 @@ public class StaffService {
             return lst.get(0);
         }
     }
+    
+    public List<taiTKBean> getStaffCarriagebyListOrg(Long id) {
+        return staffDAO.getStaffCarriagebyListOrg(uttData, id);
+    }
+    
 }

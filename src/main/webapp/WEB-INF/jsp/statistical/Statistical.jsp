@@ -44,14 +44,6 @@
 				                 <option value="2015">2015-2016</option>
 				            </select>
                         </div>
-                        <label class="control-label pr-0 col-md-3 col-sm-4 col-xs-12">Cấp đơn vị</label>
-                        <div class="col-md-3 col-sm-8 col-xs-12">
-                            <select class="form-control select2" id="level" name="level">
-				                 <option value="1" selected="selected">Toàn Trường</option>
-				                 <option value="2">Khoa</option>
-				                 <option value="3">Bộ Môn</option>
-				            </select>
-                        </div>
                     </div>
                     
                     <div class="area-button">
@@ -79,69 +71,22 @@
 	
 <script>
 
-function actionSave(){
-	if(validateBeforeSave()){
-		confirmSave(null, function(){
-	        var url ="/organization";
-	        ajaxSendData("POST","saveResult",url,getFormData('formSave'),null);
-	    });
-	}
-    
-}
+
 
 function actionSearch(){
     var areaId ="resultListArea";
-    var url="/organization/search"
+    var url="/bao-cao/search";
     var data = getFormData('formSearch');
     ajaxUpdate("GET",areaId,url,data,null);
 }
 
-function afterSave(){
-    actionSearch();
-    reloadTree();
-}
 
-function prepareUpdate(id){
-    var areaId ="myModal";
-    var url="/organization/"+id;
-    ajaxUpdate("GET",areaId,url,null, function(){
-        $('#myModal').modal('show');
-    });
-}
 
-function prepareDelete(id){
-    confirmDelete(null, function(){
-        var url ="/organization/delete/"+id;
-        ajaxSendData("POST","saveResult",url,null);
-    })
-    
-}
 function reloadTree(){
 	$('#lazy').jstree(true).refresh();
 }
 
-function validateBeforeSave(){
-	if($('#formSave>#code').val()==''){
-		showError('Chưa nhập mã đơn vị!');
-		$('#formSave #code').focus();
-		return false;
-	}
-	
-	if($('#formSave>#name').val()==''){
-		showError('Chưa nhập tên đơn vị!');
-		$('#formSave #name').focus();
-		return false;
-	}
-	
-	if($('#formSave>#foundedDateShow').val()==''){
-		showError('Chưa nhập ngày thành lập!');
-		$('#formSave #foundedDateShow').focus();
-		return false;
-	}
-	
-	
-	return true;
-}
+
 
 	$(document).ready(function(){
 		actionSearch();

@@ -19,6 +19,7 @@ import application.role.bo.StaffRoleBO;
 import application.staff.bean.StaffBean;
 import application.staff.bo.StaffBO;
 import application.staff.form.StaffForm;
+import application.tai.bean.taiTKBean;
 
 @Transactional
 @Repository
@@ -123,6 +124,24 @@ public interface StaffDAO  extends JpaRepository<StaffBO, Long> {
         SQLQuery query = uttData.createSQLQuery(hql);
         query.setParameter("id", id);
         uttData.setResultTransformer(query, StaffBean.class);
+        return query.list();
+    }
+    
+    public default List<taiTKBean> getStaffCarriagebyListOrg(UttData uttData, Long id) {
+        String hql = "SELECT og.id as id,og.name,og.code " + 
+        		",sum(nc.research_point) as gio_nc,sum(nc.research_point)/tg.research_duty*100 as NC_effecientcy " + 
+        		",sum(gd.edu_point) as gio_gd ,sum(gd.edu_point)/tg.edu_duty*100 as GD_effecientcy " + 
+        		", tg.edu_duty as tai_gd, tg.research_duty as tai_nc " + 
+        		"FROM db_ltnc.staff as gv " + 
+        		"left join staff_course as gd on gv.id = gd.staff_id " + 
+        		"left join staff_paper as nc on gv.id = nc.staff_id  " + 
+        		"left join target as tg on gv.level_title_id = tg.staff_property_id " + 
+        		"join organization og on gv.organization_id = og.id " + 
+        		"where og.path like concat('%/',:id,'/%') " + 
+        		"group by og.id";
+        SQLQuery query = uttData.createSQLQuery(hql);
+        query.setParameter("id", id);
+        uttData.setResultTransformer(query, taiTKBean.class);
         return query.list();
     }
 }
