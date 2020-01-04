@@ -90,6 +90,7 @@ function reloadTree(){
 
 	$(document).ready(function(){
 		actionSearch();
+		$('.select2').select2();
 		
 		// lazy demo
 		$('#lazy').jstree({
