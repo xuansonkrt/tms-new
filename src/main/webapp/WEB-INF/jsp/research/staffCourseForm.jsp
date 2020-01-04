@@ -19,7 +19,7 @@
                 <i class="fa fa-th"></i> Thêm mới tải giảng dạy
             </logic:empty>
                     <logic:notEmpty name="id">
-                <i class="fa fa-th"></i> Cập nhật tải giảng dạy
+                <i class="fa fa-th"></i> Thông tin tải giảng dạy
             </logic:notEmpty>
                 </h5>
                 <button type="button" class="close" data-dismiss="modal"

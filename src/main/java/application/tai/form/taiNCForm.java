@@ -1,8 +1,6 @@
-package application.organization.form;
+package application.tai.form;
 
 import java.util.Date;
-
-import javax.persistence.Column;
 
 public class taiNCForm {
 

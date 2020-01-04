@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label class="control-label pr-0 col-md-2 col-sm-4 col-xs-12 required">Ngày thành lập</label>
+                        <label class="control-label pr-0 col-md-2 col-sm-4 col-xs-12">Ngày thành lập</label>
                         <div class="col-md-3 col-sm-8 col-xs-12">
                             <tags:datePicker name="foundedDateShow" value="${organization.foundedDateShow}"/>
                         </div>

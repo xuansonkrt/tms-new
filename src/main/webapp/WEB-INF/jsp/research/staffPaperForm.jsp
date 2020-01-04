@@ -18,7 +18,7 @@
                 <i class="fa fa-th"></i> Thêm mới bài báo
             </logic:empty>
                     <logic:notEmpty name="id">
-                <i class="fa fa-th"></i> Cập nhật bài báo
+                <i class="fa fa-th"></i> Thông tin tải viết báo
             </logic:notEmpty>
                 </h5>
                 <button type="button" class="close" data-dismiss="modal"
