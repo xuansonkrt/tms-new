@@ -17,14 +17,17 @@
 <table class="table table-striped table-bordered" style="width:100%">
 <thead>
   <tr>
-    <th>Tên bộ Môn</th>
-    <th>Mã bộ môn</th>
-	<th>Tổng số giờ nghiên cứu</th>
-	<th>Hiệu quả đạt nghiên cứu</th>
-	<th>Tổng số giờ giảng dạy</th>
-	<th>Hiệu quả đạt giảng dạy</th>
-	<th>Định mức nghiên cứu</th>
-	<th>Định mức giảng dạy</th>
+    <th rowspan="2">Đơn vị</th>
+    <th colspan="3">Tải đào tạo</th>
+	<th colspan="3">Tải NCKH</th>
+  </tr>
+  <tr>
+	<th>Thực tải</th>
+	<th>Yêu cầu</th>
+	<th>% Đào tạo</th>
+	<th>Thực tải</th>
+	<th>Yêu cầu</th>
+	<th>% NCKH</th>
   </tr>
 </thead>
 <tbody>
@@ -32,13 +35,12 @@
   <c:forEach items="${resultList}" var="reviewListId">
 	  <tr>
 		<td><c:out value="${reviewListId.name}" /></td>
-	    <td><c:out value="${reviewListId.code}" /></td>
 		<td><c:out value="${reviewListId.gio_nc}" /></td>
+		<td><c:out value="${reviewListId.tai_nc}" /></td>
 		<td><c:out value="${reviewListId.NC_effecientcy}" /><span>%</span></td>
 		<td><c:out value="${reviewListId.gio_gd}" /></td>
-		<td><c:out value="${reviewListId.GD_effecientcy}" /><span>%</span></td>
-		<td><c:out value="${reviewListId.tai_nc}" /></td>
 		<td><c:out value="${reviewListId.tai_gd}" /></td>
+		<td><c:out value="${reviewListId.GD_effecientcy}" /><span>%</span></td>
 	  </tr>
 	</c:forEach>
 </tbody>
