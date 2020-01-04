@@ -31,7 +31,7 @@
 	     </div>
 	     
 	     <div class="card-body"style="max-height: 350px;">
-	          <form id="formSearch" name="formSearch" class="form-horizontal">
+	          <form id="formSearch3" name="formSearch3" class="form-horizontal">
 	          <input type="hidden" name="id" class="form-control" id="staffId" placeholder="" value="${staffPaper.staffId}">
 	          	<div class="row form-group">
 	               <label class="control-label pr-0 col-md-2 col-sm-4 col-xs-12">Học kỳ</label>
@@ -193,6 +193,19 @@ function validateBeforeSave(){
         
     }
     
+    
+    function actionSaveStaffCourse(){
+    	if(validateBeforeSave()){
+    		confirmSave(null, function(){
+                var url ="/research/staff-course";
+                ajaxSendData("POST","saveResult",url,getFormData('formSave'),null);
+            });
+    	}
+    	
+        
+    }
+    
+    
     function actionSearch(){
         var areaId ="staffPaperArea";
         var url="/research/staff-paper"
@@ -201,13 +214,33 @@ function validateBeforeSave(){
         
     }
     
+    function actionSearchCourse(){
+        var areaId ="staffCourseArea";
+        var url="/research/staff-course"
+        var data = getFormData('formSearch3');
+        ajaxUpdate("GET",areaId,url,data,null);
+        
+    }
+    
     function afterSave(){
         actionSearch();
+    }
+    
+    function afterSaveCourse(){
+        actionSearchCourse();
     }
     
     function prepareUpdate(id){
         var areaId ="myModal";
         var url="/research/staff-paper/"+id;
+        ajaxUpdate("GET",areaId,url,null, function(){
+            $('#myModal').modal('show');
+        });
+    }
+    
+    function prepareUpdateStaffCourse(id){
+        var areaId ="myModal";
+        var url="/research/staff-course/"+id;
         ajaxUpdate("GET",areaId,url,null, function(){
             $('#myModal').modal('show');
         });
@@ -220,9 +253,18 @@ function validateBeforeSave(){
         })
         
     }
+    
+    function prepareDeleteStaffCourse(id){
+        confirmDelete(null, function(){
+            var url ="/research/staff-course/delete/"+id;
+            ajaxSendData("POST","saveResult",url,null);
+        })
+        
+    }
     $(document).ready(function(){
     	$('.select2').select2();
         actionSearch();
+        actionSearchCourse();
         
         $('#cbStaff').change(function(event){
 			loadStaffInfo();
@@ -232,6 +274,13 @@ function validateBeforeSave(){
 		})
 		 $('#year').change(function(event){
 			 actionSearch();
+		})
+		
+		$('#term1').change(function(event){
+			actionSearchCourse();
+		})
+		 $('#year1').change(function(event){
+			 actionSearchCourse();
 		})
 		
     })

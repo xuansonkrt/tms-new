@@ -130,6 +130,10 @@
    <definition name="staffPaperList" template="/WEB-INF/jsp/research/staffPaperList.jsp" />
    <definition name="staffPaperForm" template="/WEB-INF/jsp/research/staffPaperForm.jsp" />
    <definition name="staffCourseForm" template="/WEB-INF/jsp/research/staffCourseForm.jsp" />
+   <definition name="courseCombobox" template="/WEB-INF/jsp/research/courseCombobox.jsp" />
+   <definition name="learningTypeCombobox" template="/WEB-INF/jsp/research/learningTypeCombobox.jsp" />
+   <definition name="staffCourseList" template="/WEB-INF/jsp/research/staffCourseList.jsp" />
+   
    
    <definition name="updateAndClose" template="/WEB-INF/jsp/common/updateAndClose.jsp" /> 
    

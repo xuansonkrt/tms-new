@@ -43,6 +43,9 @@ public class StaffCourseBO {
     
     @Column(name = "organization_id")
     private Long organizationId;
+    
+    @Column(name = "education_level_id")
+    private Long educationLevelId;
 
     @Column(name = "created_date")
     private Date createdDate;
@@ -55,8 +58,19 @@ public class StaffCourseBO {
 
     @Column(name = "modified_by")
     private Long modifiedBy;
+    
+    
+    public Long getEducationLevelId() {
+        return educationLevelId;
+    }
+
 
     
+    public void setEducationLevelId(Long educationLevelId) {
+        this.educationLevelId = educationLevelId;
+    }
+
+
     public Long getId() {
         return id;
     }

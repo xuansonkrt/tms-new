@@ -21,7 +21,45 @@ public class StaffCourseForm {
     private Date modifiedDate;
     private Long createdBy;
     private Long modifiedBy;
+    private String subjectName;
+    private Long amountStudent;
+    private Long educationLevelId;
     
+    
+    
+    
+    
+    
+    public Long getEducationLevelId() {
+        return educationLevelId;
+    }
+
+
+    
+    public void setEducationLevelId(Long educationLevelId) {
+        this.educationLevelId = educationLevelId;
+    }
+
+
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
+    }
+
+    
+    public Long getAmountStudent() {
+        return amountStudent;
+    }
+
+    
+    public void setAmountStudent(Long amountStudent) {
+        this.amountStudent = amountStudent;
+    }
+
     public Long getId() {
         return id;
     }

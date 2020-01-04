@@ -18,7 +18,76 @@ public class StaffCourseBean {
     private Date modifiedDate;
     private Long createdBy;
     private Long modifiedBy;
+    private String subjectName;
+    private Long amountStudent;
+    private Long educationLevelId;
+    private String learningTypeName;
+    private String code;
     
+    
+    
+    
+    
+    
+    
+    public String getCode() {
+        return code;
+    }
+
+
+
+
+    
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+
+
+
+    public String getLearningTypeName() {
+        return learningTypeName;
+    }
+
+
+
+    
+    public void setLearningTypeName(String learningTypeName) {
+        this.learningTypeName = learningTypeName;
+    }
+
+
+
+    public Long getEducationLevelId() {
+        return educationLevelId;
+    }
+
+
+    
+    public void setEducationLevelId(Long educationLevelId) {
+        this.educationLevelId = educationLevelId;
+    }
+
+
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
+    }
+
+    
+    public Long getAmountStudent() {
+        return amountStudent;
+    }
+
+    
+    public void setAmountStudent(Long amountStudent) {
+        this.amountStudent = amountStudent;
+    }
+
     public Long getId() {
         return id;
     }

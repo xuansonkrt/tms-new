@@ -45,4 +45,8 @@ public class CourseService {
         return courseDAO.searchData(uttData, form, req);
     }
     
+    public  List<CourseBean> getByEducationLevel(Long educationLevelId) {
+        return courseDAO.getByEducationLevel(uttData, educationLevelId);
+    }
+    
 }

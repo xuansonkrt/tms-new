@@ -43,4 +43,8 @@ public class LearningTypeService {
     public DataTableResults<LearningTypeBean> searchData(LearningTypeForm form, HttpServletRequest req) {
         return learningTypeDAO.searchData(uttData, form, req);
     }
+    
+    public List<LearningTypeBean> getByEducationLevel(Long educationLevelId) {
+        return learningTypeDAO.getByEducationLevel(uttData, educationLevelId);
+    }
 }
