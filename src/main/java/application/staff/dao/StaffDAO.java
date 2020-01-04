@@ -129,9 +129,9 @@ public interface StaffDAO  extends JpaRepository<StaffBO, Long> {
     
     public default List<taiTKBean> getStaffCarriagebyListOrg(UttData uttData, Long id) {
         String hql = "SELECT og.id as id,og.name,og.code " + 
-        		",sum(nc.research_point) as gio_nc,sum(nc.research_point)/tg.research_duty*100 as NC_effecientcy " + 
-        		",sum(gd.edu_point) as gio_gd ,sum(gd.edu_point)/tg.edu_duty*100 as GD_effecientcy " + 
-        		", tg.edu_duty as tai_gd, tg.research_duty as tai_nc " + 
+        		",sum(nc.research_point) as gio_nc,sum(nc.research_point)/sum(distinct tg.research_duty)*100 as NC_effecientcy " + 
+        		",sum(gd.edu_point) as gio_gd ,sum(gd.edu_point)/sum(distinct tg.edu_duty)*100 as GD_effecientcy " + 
+        		", sum(distinct tg.edu_duty) as tai_gd, sum(distinct tg.research_duty) as tai_nc " + 
         		"FROM db_ltnc.staff as gv " + 
         		"left join staff_course as gd on gv.id = gd.staff_id " + 
         		"left join staff_paper as nc on gv.id = nc.staff_id  " + 

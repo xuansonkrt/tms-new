@@ -14,29 +14,34 @@
 </style>
 <logic:notEmpty name="resultList">
 <!--   pagesize="10" -->
-<table style="width:100%">
+<table class="table table-striped table-bordered" style="width:100%">
+<thead>
   <tr>
-    <th>name</th>
-    <th>code</th>
-	<th>gio_nc</th>
-	<th>nc_effic</th>
-	<th>gio_gd</th>
-	<th>gd_effic</th>
-	<th>tai_gd</th>
-	<th>tai_nc</th>
+    <th>Tên bộ Môn</th>
+    <th>Mã bộ môn</th>
+	<th>Tổng số giờ nghiên cứu</th>
+	<th>Hiệu quả đạt nghiên cứu</th>
+	<th>Tổng số giờ giảng dạy</th>
+	<th>Hiệu quả đạt giảng dạy</th>
+	<th>Định mức nghiên cứu</th>
+	<th>Định mức giảng dạy</th>
   </tr>
+</thead>
+<tbody>
+
   <c:forEach items="${resultList}" var="reviewListId">
 	  <tr>
 		<td><c:out value="${reviewListId.name}" /></td>
 	    <td><c:out value="${reviewListId.code}" /></td>
 		<td><c:out value="${reviewListId.gio_nc}" /></td>
-		<td><c:out value="${reviewListId.NC_effecientcy}" /></td>
+		<td><c:out value="${reviewListId.NC_effecientcy}" /><span>%</span></td>
 		<td><c:out value="${reviewListId.gio_gd}" /></td>
-		<td><c:out value="${reviewListId.GD_effecientcy}" /></td>
-		<td><c:out value="${reviewListId.tai_gd}" /></td>
+		<td><c:out value="${reviewListId.GD_effecientcy}" /><span>%</span></td>
 		<td><c:out value="${reviewListId.tai_nc}" /></td>
+		<td><c:out value="${reviewListId.tai_gd}" /></td>
 	  </tr>
 	</c:forEach>
+</tbody>
 </table>
 </logic:notEmpty>
 <logic:empty  name="resultList">
